@@ -45,7 +45,7 @@ public class Habitacion {
         return Correlativo;
     }
     
-    public void setPiso(char .Piso){
+    public void setPiso(char Piso){
         this.Piso = Piso;
     }
     
