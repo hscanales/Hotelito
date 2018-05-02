@@ -10,5 +10,5 @@ package hotelito;
  * @author nitroskate
  */
 public class Reservacion {
-    
+    private int pee;
 }
