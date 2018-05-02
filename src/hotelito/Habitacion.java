@@ -41,7 +41,7 @@ public class Habitacion {
         this.Correlativo = Correlativo;
     }
     
-    public char getCorrelativo(){
+    public int getCorrelativo(){
         return Correlativo;
     }
     
@@ -49,7 +49,7 @@ public class Habitacion {
         this.Piso = Piso;
     }
     
-    public int getPiso(){
+    public char getPiso(){
         return Piso;
     }
 
