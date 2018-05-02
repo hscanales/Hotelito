@@ -65,8 +65,5 @@ public class Habitacion {
         return isAvailable;
     }
     
-
-    
-    
     
 }
