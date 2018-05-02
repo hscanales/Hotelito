@@ -12,10 +12,14 @@ package hotelito;
 public class Habitacion {
     private String Tipo;
     private int Costo;
-    private char Correlativo;
-    private int Piso;
+    private int Correlativo;
+    private char Piso;
     private boolean isReserved;
     private boolean isAvailable;
+    
+    public Habitacion(){
+        
+    }
     
     public void setTipo(String Tipo){
         this.Tipo = Tipo;
@@ -33,7 +37,7 @@ public class Habitacion {
         return Costo;
     }
     
-    public void setCorrelativo(char Correlativo){
+    public void setCorrelativo(int Correlativo){
         this.Correlativo = Correlativo;
     }
     
@@ -41,7 +45,7 @@ public class Habitacion {
         return Correlativo;
     }
     
-    public void setPiso(int Piso){
+    public void setPiso(char Piso){
         this.Piso = Piso;
     }
     
