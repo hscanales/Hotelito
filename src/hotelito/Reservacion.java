@@ -10,5 +10,35 @@ package hotelito;
  * @author nitroskate
  */
 public class Reservacion {
-    private int pee;
+    private int dias;
+    private Habitacion habitacion;
+    private Paquete paquete;
+
+    public int getDias() {
+        return dias;
+    }
+
+    public void setDias(int dias) {
+        this.dias = dias;
+    }
+
+    public Habitacion getHabitacion() {
+        return habitacion;
+    }
+
+    public void setHabitacion(Habitacion habitacion) {
+        this.habitacion = habitacion;
+    }
+
+    public Paquete getPaquete() {
+        return paquete;
+    }
+
+    public void setPaquete(Paquete paquete) {
+        this.paquete = paquete;
+    }
+    
+    public void ComprobarHabitacion(int, char){
+    }
+    
 }
