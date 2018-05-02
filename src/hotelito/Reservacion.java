@@ -38,7 +38,7 @@ public class Reservacion {
         this.paquete = paquete;
     }
     
-    public void ComprobarHabitacion(int, char){
+    public void ComprobarHabitacion(int i, char c){
     }
     
 }
