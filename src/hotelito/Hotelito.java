@@ -10,7 +10,7 @@ package hotelito;
  * @author HsCanales <00136317@uca.edu.sv>
  */
 public class Hotelito {
-
+    private String pene;
     /**
      * @param args the command line arguments
      */
