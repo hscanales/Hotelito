@@ -19,7 +19,8 @@ public class Hotel extends Auxiliar {
     
     public Hotel() {
         String[] pisos ={"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
-        ArrayList<String> hab = new ArrayList<>();
+        ArrayList<String> hab; 
+        hab = new ArrayList<>();
         for (int i = 1; i <= npisos; i++){
             for (int j = 1; j <= 6; j++){
                 String n = String.valueOf(j);
