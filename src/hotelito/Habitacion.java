@@ -13,7 +13,7 @@ public class Habitacion {
     private String Tipo;
     private double Costo;
     private int Correlativo;
-    private char Piso;
+    private String Piso;
     private boolean isReserved;
     private boolean isAvailable;
     
@@ -45,11 +45,11 @@ public class Habitacion {
         return Correlativo;
     }
     
-    public void setPiso(char Piso){
+    public void setPiso(String Piso){
         this.Piso = Piso;
     }
     
-    public char getPiso(){
+    public String getPiso(){
         return Piso;
     }
 
@@ -69,7 +69,7 @@ public class Habitacion {
         return isAvailable;
     }
 
-    public Habitacion(String Tipo, float Costo, int Correlativo, char Piso, boolean isReserved, boolean isAvailable) {
+    public Habitacion(String Tipo, float Costo, int Correlativo, String Piso, boolean isReserved, boolean isAvailable) {
         this.Tipo = Tipo;
         this.Costo = Costo;
         this.Correlativo = Correlativo;
