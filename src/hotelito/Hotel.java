@@ -83,7 +83,7 @@ public class Hotel extends Auxiliar {
     boolean verificarHabitacion(String a, int b) {
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
-                if (Hab.IsAvailable() && !Hab.IsReserved()) {
+                if (!Hab.IsAvailable()) {
                     return true;
                 }
             }
@@ -104,7 +104,7 @@ public class Hotel extends Auxiliar {
         boolean flag = false;
         if (verificarCliente(dui)) {
             System.out.print("PASASTE VERIFICAR CLIENTE");
-            if (verificarHabitacion(a, b)) {
+            if (verificarHabitacion(a,b)) {
                 System.out.print("PASASTE Habitacion");
                 Cliente c = new Cliente(dui);
                 Paquete p = new Paquete();
