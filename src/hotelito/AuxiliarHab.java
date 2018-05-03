@@ -16,7 +16,7 @@ public class AuxiliarHab {
     public void DeshabilitarPiso(char a){
         for(Habitacion Hab: Habitaciones){
             if(Hab.getPiso() == a){
-                Hab.setIsAvailable(false);
+                Hab.setIsAvailable(true);
             }
         }
     }
@@ -24,7 +24,7 @@ public class AuxiliarHab {
     public void DeshabilitarHab(char a,int b){
         for(Habitacion Hab: Habitaciones){
             if(Hab.getPiso() == a && Hab.getCorrelativo() == b){
-                Hab.setIsAvailable(false);
+                Hab.setIsAvailable(true);
             }
         }
     }
