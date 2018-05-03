@@ -51,7 +51,7 @@ public class Nombre {
         this.SegundoApe = SegundoApe;
     }
     
-    public void ValidarPrimerNombre(String n){
+    public String ValidarPrimerNombre(String n){
         boolean x=false;
         Scanner in = new Scanner(System.in);
         while(n.length()==0){
@@ -71,6 +71,74 @@ public class Nombre {
                 x=true;
             }
         }
+        return n;
+
+    }
+    
+    public String ValidarSegundoNombre(String n){
+        boolean x=false;
+        Scanner in = new Scanner(System.in);
+        while(x==false){
+            try{
+                Integer.parseInt(n);
+                System.out.println("Escriba un nombre con letras.");
+                n= in.next();
+                x=false;
+                
+            }
+            catch (NumberFormatException f){
+                System.err.println("Nombre escrito correctamente");
+                x=true;
+            }
+        }
+        
+        return n;
+
+    }
+    
+    public String ValidarPrimerApellido(String n){
+        boolean y=false;
+        Scanner in = new Scanner(System.in);
+        while(n.length()==0){
+            System.out.println("No ha escrito nada. Ingrese un apellido: ");
+            n = in.next();
+        }
+        while(y==false){
+            try{
+                Integer.parseInt(n);
+                System.out.println("Escriba un apellido con letras.");
+                n= in.next();
+                y=false;
+                
+            }
+            catch (NumberFormatException f){
+                System.err.println("Apellido escrito correctamente");
+                y=true;
+            }
+        }
+        
+        return n;
+
+    }
+    
+    public String ValidarSegundoApellido(String n){
+        boolean y=false;
+        Scanner in = new Scanner(System.in);
+        while(y==false){
+            try{
+                Integer.parseInt(n);
+                System.out.println("Escriba un apellido con letras.");
+                n= in.next();
+                y=false;
+                
+            }
+            catch (NumberFormatException f){
+                System.err.println("Apellido escrito correctamente");
+                y=true;
+            }
+        }
+        
+        return n;
 
     }
     
