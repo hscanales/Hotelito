@@ -80,14 +80,4 @@ public class Reservacion extends Hotel{
             }
         }
     }
-    
-    public boolean ValidarHab(String shab) {
-        
-        for (int i = 0; i < getNpisos(); i++){
-            if (shab.equals(hab.get(i))){
-                return true;
-            }
-        }
-        return true;
-    }
 }
