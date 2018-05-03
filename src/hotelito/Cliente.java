@@ -12,15 +12,12 @@ package hotelito;
 import java.util.Scanner;
 
 public class Cliente {
-    private String numhab, nombre, tarcre, dui;
-    private int numdia;
+    private Reservacion res;
+    private String nombre, tarcre, dui;
     private float costo, coston;
     
     public Cliente (){}
 
-    public void setNumhab(String numhab) {
-        this.numhab = numhab;
-    }
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -30,9 +27,6 @@ public class Cliente {
     public void setDui(String dui) {
         this.dui = dui;
     }
-    public void setNumdia(int numdia) {
-        this.numdia = numdia;
-    }
     public void setCosto(float costo) {
         this.costo = costo;
     }
@@ -40,9 +34,6 @@ public class Cliente {
         this.coston = coston;
     }
 
-    public String getNumhab() {
-        return numhab;
-    }
     public String getNombre() {
         return nombre;
     }
@@ -51,9 +42,6 @@ public class Cliente {
     }
     public String getDui() {
         return dui;
-    }
-    public int getNumdia() {
-        return numdia;
     }
     public float getCosto() {
         return costo;
@@ -80,7 +68,7 @@ public class Cliente {
         }
     }
     
-    public void ValidarNumDia(){
+    /*public void ValidarNumDia(){
         int flag = 1;
         while(flag == 1){
             int dia;
@@ -96,7 +84,7 @@ public class Cliente {
                 System.err.println("La cantidad de dias que ingreso es mayor que el limite ");
             }
         }
-    }
+    }*/
     public void validarDui(String dui){
         int cont = 9;
         int auxiliar, total = 0;
@@ -107,9 +95,6 @@ public class Cliente {
             cont=cont-1;
         }
         auxiliar = Integer.parseInt(String.valueOf(dui.charAt(8)));
-        System.out.println(10-(total%10));
-        
+        System.out.println(10-(total%10));      
     }
-    
-    
 }
