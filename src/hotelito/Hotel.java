@@ -66,13 +66,18 @@ public class Hotel extends Auxiliar {
     }
     
     boolean verificarCliente(String dui) {
+        Cliente g= new Cliente();
+        if(g.validarDui(dui)){
+            
         
         for (Reservacion rev : reservaciones) {
-            if (dui.equals(rev.getCliente().getDui()) && !rev.getCliente().validarDui(dui)) {
+            if (dui.equals(rev.getCliente().getDui())) {
                 return false;
             }
         }
         return true;
+        }
+        return false;
     }
     
     boolean verificarHabitacion(String a, int b) {
@@ -95,15 +100,20 @@ public class Hotel extends Auxiliar {
     }
     
     void HacerReservacion(String dui, String a, int b) {
+        //HabitacionesDisponibles();
         boolean flag = false;
         if (verificarCliente(dui)) {
+            System.out.print("PASASTE VERIFICAR CLIENTE");
             if (verificarHabitacion(a, b)) {
+                System.out.print("PASASTE Habitacion");
                 Cliente c = new Cliente(dui);
                 Paquete p = new Paquete();
                 ReservarHabitacion(a, b);
+                
                 for (Habitacion Hab : habitaciones) {
                     if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
-                        Reservacion v = new Reservacion(7, Hab, p, c);
+                        System.out.print("TSUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
+                        Reservacion v = new Reservacion(6, Hab, p, c);
                         reservaciones.add(v);
                         flag = true;
                     }

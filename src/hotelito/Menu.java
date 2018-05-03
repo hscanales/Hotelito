@@ -97,12 +97,13 @@ Hotel hotel= new Hotel();
                 flag=false;
                 break;
             case 1:
+                hotel.HabitacionesDisponibles();
                 print("Ingrese el DUI del cliente y La habitacion deseeada");
                 String dui= sc1.nextLine();
                 int haba = 1;
-                String habb = "f";
+                String habb = "A";
 
-                hotel.HacerReservacion(dui,habb,4);
+                hotel.HacerReservacion(dui,habb,haba);
                 break;
             case 2:
                 print("Ingrese Letra de la habitacion a desabilitar: ");
