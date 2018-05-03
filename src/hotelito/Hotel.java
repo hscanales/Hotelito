@@ -36,7 +36,14 @@ public class Hotel extends Auxiliar {
             }
         }
     }
-
+    
+    void setNpisos(int npisos){
+        this.npisos = npisos;
+    } 
+    int getNpisos(){
+        return npisos;
+    }
+    
     void HabitacionesDisponibles() {
         print("Las Habitaciones disponibles son: ");
         habitaciones.forEach((Habitacion habitacion) -> {
