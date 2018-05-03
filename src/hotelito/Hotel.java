@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class Hotel extends Auxiliar{
     ArrayList<Habitacion> habitaciones = new ArrayList<>();
+    ArrayList<Reservacion> reservaciones = new ArrayList<>();
 
     public Hotel() {
         Habitacion A1= new Habitacion("Single",125,1,"A",false,false);  
@@ -57,4 +58,9 @@ public class Hotel extends Auxiliar{
             }
         }
     }
+        
+        void test(){
+            int a= input.nextInt();
+            print(a);
+        }
 }
