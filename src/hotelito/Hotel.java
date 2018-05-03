@@ -16,12 +16,11 @@ public class Hotel extends Auxiliar {
     ArrayList<Habitacion> habitaciones = new ArrayList<>();
     ArrayList<Reservacion> reservaciones = new ArrayList<>();
     ArrayList<Paquete> paquetes = new ArrayList<>();
+    ArrayList<String> hab = new ArrayList<>();
     private int npisos = 6;
 
     public Hotel() {
         String[] pisos = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
-        ArrayList<String> hab;
-        hab = new ArrayList<>();
         Paquete premiun= new Paquete(150,"Descripcion pendiente","Premiun","1");
         Paquete basico= new Paquete(10,"Descripcion pendiente","Basico","2");
         
