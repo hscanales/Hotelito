@@ -16,11 +16,8 @@ public class Hotelito {
     public static void main(String[] args) {
         // TODO code application logic here
         Menu menu = new Menu();
-        //menu.start();
-        
-        String n="";
-        Nombre nombre = new Nombre();
-        nombre.ValidarPrimerNombre(n);
+        menu.start();
+       
     }
     
 }

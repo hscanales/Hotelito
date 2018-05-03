@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -10,6 +10,7 @@ package hotelito;
  * @author nitroskate
  */
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Cliente {
     private Reservacion res;
@@ -88,5 +89,25 @@ public class Cliente {
         }
         return false;
     }
+    
+    /* Validar el costo en el menu, para despuestio 
+    public double validarCosto(double c){
+        boolean y=false;
+        Scanner in = new Scanner(System.in);
+        while(y==false){
+            try{
+                System.out.println("Escriba un apellido con letras.");
+                y=true;
+                
+            }
+            catch (InputMismatchException f){
+                System.err.println("Ingrese un dato numerico.");
+                c=in.nextDouble();
+                y=false;
+            }
+        }
+        
+        return c;
+    }*/
     
 }
