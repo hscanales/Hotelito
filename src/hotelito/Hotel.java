@@ -95,6 +95,7 @@ public class Hotel extends Auxiliar {
     }
     
     void HacerReservacion(String dui, String a, int b) {
+        boolean flag = false;
         if (verificarCliente(dui)) {
             if (verificarHabitacion(a, b)) {
                 Cliente c = new Cliente(dui);
@@ -104,11 +105,16 @@ public class Hotel extends Auxiliar {
                     if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
                         Reservacion v = new Reservacion(7, Hab, p, c);
                         reservaciones.add(v);
+                        flag = true;
                     }
                 }
                 
             }
         }
+        if(!flag){
+            System.out.println("no se hizo la reservacion ");
+        }
+        
     }
     
     void EleminarReservacion(String dui) {
