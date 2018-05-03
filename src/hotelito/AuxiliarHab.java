@@ -29,7 +29,7 @@ public class AuxiliarHab {
         }
     }
     
-    public void ṔonerPrecio(char a, int b, float c){
+    public void ṔonerPrecio(char a, int b, double c){
         for(Habitacion Hab: Habitaciones){
             if(Hab.getPiso() == a && Hab.getCorrelativo() == b){
                 Hab.setCosto(c);
