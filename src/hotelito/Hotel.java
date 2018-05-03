@@ -23,7 +23,7 @@ public class Hotel extends Auxiliar {
         ArrayList<String> hab;
         hab = new ArrayList<>();
         for (int i = 1; i <= npisos; i++) {
-            for (int j = 1; j <= 6; j++) {
+            for (int j = 1; j <= 10; j++) {
                 String n = String.valueOf(j);
                 if (i % 2 == 0) {
                     habitaciones.add(new Habitacion("Double", 150, j, pisos[i - 1], false, false));
