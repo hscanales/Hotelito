@@ -43,6 +43,7 @@ public class Menu extends Auxiliar {
                     break;
                 case 3:
                     print("Vamos a Modificar un cliente");
+                    deployOp3();
                     break;
                 default:
                     print("No a ingresado una opcion valida intente de nuevo");
@@ -84,6 +85,16 @@ public class Menu extends Auxiliar {
                     print("Ingrese Correlativo de la habitacion a desabilitar: ");
                     int r = sc.nextInt();
                     hotel.DeshabilitarHab(s2, r);
+                    break;
+                    
+                case 3:
+                    print("Ingrese la letra de la habitacion para poner el costo: ");
+                    String l = sc1.nextLine();
+                    print("Ingrese el correlativo de la habitacion para poner el costo: ");
+                    int l2 = sc.nextInt();
+                    print("Ingrese el costo de la habitacion: ");
+                    double c = sc.nextDouble();
+                    hotel.PonerPrecio(l, l2, c);
                     break;
                     
                 case 6:
@@ -137,5 +148,9 @@ public class Menu extends Auxiliar {
             }
 
         }
+    }
+    
+    void deployOp3(){
+        
     }
 }

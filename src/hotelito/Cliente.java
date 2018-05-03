@@ -12,7 +12,7 @@ package hotelito;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class Cliente {
+public class Cliente extends Nombre{
     private Reservacion res;
     private String nombre, tarcre, dui;
     private float costo, coston;

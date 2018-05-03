@@ -64,6 +64,14 @@ public class Hotel extends Auxiliar {
             }
         }
     }
+    
+    void PonerPrecio(String a, int b, double c){
+        for(Habitacion Hab: habitaciones){
+            if ((a.equals(Hab.getPiso())) && Hab.getCorrelativo() == b){
+                Hab.setCosto(c);
+            }
+        }
+    }
 
     void test() {
         int a = input.nextInt();
