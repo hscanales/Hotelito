@@ -83,7 +83,7 @@ public class Hotel extends Auxiliar {
     boolean verificarHabitacion(String a, int b) {
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
-                if (!Hab.IsAvailable()) {
+                if (!Hab.IsAvailable() && !Hab.IsReserved()) {
                     return true;
                 }
             }
