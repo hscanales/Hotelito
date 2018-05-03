@@ -15,22 +15,23 @@ public class Hotel extends Auxiliar {
     
     ArrayList<Habitacion> habitaciones = new ArrayList<>();
     ArrayList<Reservacion> reservaciones = new ArrayList<>();
+    private int npisos = 6;
     
     public Hotel() {
-        Habitacion A1 = new Habitacion("Single", 125, 1, "A", false, false);
-        Habitacion A2 = new Habitacion("Double", 125, 2, "A", true, false);
-        Habitacion A3 = new Habitacion("Single", 125, 3, "A", false, false);
-        Habitacion A4 = new Habitacion("Double", 125, 4, "A", true, false);
-        Habitacion A5 = new Habitacion("Single", 125, 5, "A", false, false);
-        Habitacion A6 = new Habitacion("Double", 125, 6, "A", false, true);
-        Habitacion B1 = new Habitacion("Single", 125, 1, "B", false, false);
-        habitaciones.add(A1);
-        habitaciones.add(A2);
-        habitaciones.add(A3);
-        habitaciones.add(A4);
-        habitaciones.add(A5);
-        habitaciones.add(A6);
-        habitaciones.add(B1);
+        String[] pisos ={"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+        ArrayList<String> hab = new ArrayList<>();
+        for (int i = 1; i <= npisos; i++){
+            for (int j = 1; j <= 6; j++){
+                String n = String.valueOf(j);
+                if (i%2 == 0){
+                    habitaciones.add(new Habitacion("Double",150,j,pisos[i-1],false,false));
+                }
+                else {
+                    habitaciones.add(new Habitacion("Single",125,j,pisos[i-1],false,false));
+                }
+                hab.add(pisos[i-1]+n);
+            }
+        }
     }
     
     void HabitacionesDisponibles() {
