@@ -27,10 +27,19 @@ public class Hotel extends Auxiliar {
         for (int i = 1; i <= npisos; i++) {
             for (int j = 1; j <= 10; j++) {
                 String n = String.valueOf(j);
-                if (i % 2 == 0) {
-                    habitaciones.add(new Habitacion("Double", 150, j, pisos[i - 1], false, false));
-                } else {
-                    habitaciones.add(new Habitacion("Single", 125, j, pisos[i - 1], false, false));
+                if (i >= npisos-3){
+                    if (j % 2 == 0) {
+                        habitaciones.add(new Habitacion("Double", 165, j, pisos[i - 1], false, false));
+                    } else {
+                        habitaciones.add(new Habitacion("Single", 137.5, j, pisos[i - 1], false, false));
+                    }
+                }
+                else{
+                    if (j % 2 == 0) {
+                        habitaciones.add(new Habitacion("Double", 150, j, pisos[i - 1], false, false));
+                    } else {
+                        habitaciones.add(new Habitacion("Single", 125, j, pisos[i - 1], false, false));
+                    }
                 }
                 hab.add(pisos[i - 1] + n);
             }
