@@ -15,6 +15,15 @@ public class Reservacion extends Hotel{
     private int dias;
     private Habitacion habitacion;
     private Paquete paquete;
+    private Cliente cliente;
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
     public int getDias() {
         return dias;
@@ -34,6 +43,8 @@ public class Reservacion extends Hotel{
     public void setPaquete(Paquete paquete) {
         this.paquete = paquete;
     }
+    
+   
     
     public void ValidarDias(){
         int flag = 1;

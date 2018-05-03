@@ -63,4 +63,15 @@ public class Hotel extends Auxiliar{
             int a= input.nextInt();
             print(a);
         }
+       boolean verificar(String dui){
+        for(Reservacion rev: reservaciones){
+            if(dui.equals(rev.getCliente().getDui())){
+                return false;
+            }
+        }
+        return true;
+    }
+       
+
+        
 }
