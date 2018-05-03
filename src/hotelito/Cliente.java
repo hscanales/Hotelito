@@ -68,23 +68,6 @@ public class Cliente {
         }
     }
     
-    /*public void ValidarNumDia(){
-        int flag = 1;
-        while(flag == 1){
-            int dia;
-            Scanner leer = new Scanner(System.in);
-            System.out.println("Ingrese la cantidad de dias");
-            dia = leer.nextInt();
-            
-            if (dia <= 7){
-                setNumdia(dia);
-                flag = 0;
-            }
-            else{
-                System.err.println("La cantidad de dias que ingreso es mayor que el limite ");
-            }
-        }
-    }*/
     public void validarDui(String dui){
         int cont = 9;
         int auxiliar, total = 0;
