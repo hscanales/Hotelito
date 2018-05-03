@@ -55,7 +55,7 @@ public class Nombre {
         boolean x=false;
         Scanner in = new Scanner(System.in);
         while(n.length()==0){
-            System.out.println("No ha escrito nada. Ingrese un nombre: ");
+            System.out.println("No ha escrito nada. Ingrese un nombre:");
             n = in.next();
         }
         while(x==false){
