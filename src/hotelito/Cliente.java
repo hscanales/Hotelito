@@ -68,16 +68,25 @@ public class Cliente {
         }
     }
     
-    public void validarDui(String dui){
+    public boolean validarDui(String dui){
+        //String dui="CENSORED";
         int cont = 9;
         int auxiliar, total = 0;
         for(int i=0;i<dui.length()-1;i++){
             auxiliar= Integer.parseInt(String.valueOf(dui.charAt(i)))*cont;
             total += auxiliar;
-            System.out.println(auxiliar);
             cont=cont-1;
+        
         }
-        auxiliar = Integer.parseInt(String.valueOf(dui.charAt(8)));
-        System.out.println(10-(total%10));      
+        if(dui.length()!=9){
+           return false;
+        }
+     auxiliar = Integer.parseInt(String.valueOf(dui.charAt(8)));
+   // System.out.println(auxiliar);
+        if((10-(total%10))==auxiliar){
+            return true;
+        }
+        return false;
     }
+    
 }
