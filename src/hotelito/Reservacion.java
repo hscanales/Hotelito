@@ -9,6 +9,7 @@ package hotelito;
  *
  * @author nitroskate
  */
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Reservacion extends Hotel{
@@ -78,5 +79,15 @@ public class Reservacion extends Hotel{
                 System.err.println("La cantidad de dias que ingreso es mayor que el limite ");
             }
         }
+    }
+    
+    public boolean ValidarHab(String shab) {
+        ArrayList<String> hab1 = hab;
+        for (int i = 0; i < getNpisos(); i++){
+            if (shab.equals(hab1.get(i))){
+                return true;
+            }
+        }
+        return true;
     }
 }
