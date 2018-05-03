@@ -69,7 +69,7 @@ public class Habitacion {
         return isAvailable;
     }
 
-    public Habitacion(String Tipo, float Costo, int Correlativo, String Piso, boolean isReserved, boolean isAvailable) {
+    public Habitacion(String Tipo, double Costo, int Correlativo, String Piso, boolean isReserved, boolean isAvailable) {
         this.Tipo = Tipo;
         this.Costo = Costo;
         this.Correlativo = Correlativo;
