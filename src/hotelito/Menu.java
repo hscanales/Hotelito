@@ -66,7 +66,7 @@ public class Menu extends Auxiliar {
     void deployOp1() {
         boolean flag = true;
         while (flag) {
-            print("Configuracion del Hotel \n Menu \n 1- Desabilitar Piso \n 2- Desabilitar Habitacion \n 3- Definir Precio de Habitacion \n 4- Agregar Piso \n 5- Agregar Habitacion \n Ingrese su opcion: ");
+            print("Configuracion del Hotel \n Menu \n 0- Regresar \n 1- Desabilitar Piso \n 2- Desabilitar Habitacion \n 3- Definir Precio de Habitacion \n 4- Agregar Piso \n 5- Agregar Habitacion \n 6- Agregar Paquete \n 7- Mostrar paquetes actuales: \n Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
                 case 0:
@@ -84,6 +84,13 @@ public class Menu extends Auxiliar {
                     print("Ingrese Correlativo de la habitacion a desabilitar: ");
                     int r = sc.nextInt();
                     hotel.DeshabilitarHab(s2, r);
+                    break;
+                    
+                case 6:
+                    hotel.CrearPaquete();
+                    break;
+                case 7:
+                    hotel.MostrarPaquetes();
                     break;
                 default:
                     print("Ingreso una opcion no valida");

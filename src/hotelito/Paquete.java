@@ -10,14 +10,14 @@ package hotelito;
  * @author nitroskate
  */
 public class Paquete {
-    private int Costo;
+    private double Costo;
     private String descripcion,nombre,codigo;
     
     public void setCosto(int Costo) {
         this.Costo = Costo;
     }
     
-    public int getCosto() {
+    public double getCosto() {
         return Costo;
     }
 
@@ -44,7 +44,7 @@ public class Paquete {
         this.codigo = codigo;
     }
 
-    public Paquete(int Costo, String descripcion, String nombre, String codigo) {
+    public Paquete(double Costo, String descripcion, String nombre, String codigo) {
         this.Costo = Costo;
         this.descripcion = descripcion;
         this.nombre = nombre;
