@@ -10,25 +10,8 @@ package hotelito;
  * @author nitroskate
  */
 public class Paquete {
-    private boolean isPremium;
-    private boolean isBasic;
     private int Costo;
-
-    public void setIsPremium(boolean isPremium) {
-        this.isPremium = isPremium;
-    }
-    
-    public boolean isIsPremium() {
-        return isPremium;
-    }
-    
-    public void setIsBasic(boolean isBasic) {
-        this.isBasic = isBasic;
-    }
-    
-    public boolean isIsBasic() {
-        return isBasic;
-    }
+    private String descripcion,nombre,codigo;
     
     public void setCosto(int Costo) {
         this.Costo = Costo;
@@ -38,7 +21,38 @@ public class Paquete {
         return Costo;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
 
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Paquete(int Costo, String descripcion, String nombre, String codigo) {
+        this.Costo = Costo;
+        this.descripcion = descripcion;
+        this.nombre = nombre;
+        this.codigo = codigo;
+    }
     
-    
+
+    public Paquete() {
+    }
+  
 }
