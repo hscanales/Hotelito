@@ -9,7 +9,7 @@ package hotelito;
  *
  * @author nitroskate
  */
-public class Reservacion {
+public class Reservacion extends Hotel{
     private int dias;
     private Habitacion habitacion;
     private Paquete paquete;

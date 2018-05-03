@@ -57,7 +57,7 @@ public class Habitacion {
         this.isReserved = isReserved;
     }
     
-    public boolean isIsReserved() {
+    public boolean IsReserved() {
         return isReserved;
     }
 
@@ -65,8 +65,17 @@ public class Habitacion {
         this.isAvailable = isAvailable;
     }
     
-        public boolean isIsAvailable() {
+        public boolean IsAvailable() {
         return isAvailable;
+    }
+
+    public Habitacion(String Tipo, float Costo, int Correlativo, char Piso, boolean isReserved, boolean isAvailable) {
+        this.Tipo = Tipo;
+        this.Costo = Costo;
+        this.Correlativo = Correlativo;
+        this.Piso = Piso;
+        this.isReserved = isReserved;
+        this.isAvailable = isAvailable;
     }
     
     
