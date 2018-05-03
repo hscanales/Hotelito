@@ -20,7 +20,6 @@ Hotel hotel= new Hotel();
     }
 
     public void start() {
-        
         boolean flag = true;
         while (flag) {
             deployMain();

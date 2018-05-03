@@ -6,12 +6,15 @@
 package hotelito;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  *
  * @author HsCanales <00136317@uca.edu.sv>
  */
 public class Auxiliar {
+    Scanner input = new Scanner(System.in);
+    
     
     Auxiliar() {
     }
