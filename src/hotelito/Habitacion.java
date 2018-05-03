@@ -11,7 +11,7 @@ package hotelito;
  */
 public class Habitacion {
     private String Tipo;
-    private int Costo;
+    private float Costo;
     private int Correlativo;
     private char Piso;
     private boolean isReserved;
@@ -29,11 +29,11 @@ public class Habitacion {
         return Tipo;
     }
     
-    public void setCosto(int Costo){
+    public void setCosto(float Costo){
         this.Costo = Costo;
     }
     
-    public int getCosto(){
+    public float getCosto(){
         return Costo;
     }
     
