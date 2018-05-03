@@ -63,7 +63,7 @@ public class Hotel extends Auxiliar{
             int a= input.nextInt();
             print(a);
         }
-       boolean verificar(String dui){
+       boolean verificarCliente(String dui){
         for(Reservacion rev: reservaciones){
             if(dui.equals(rev.getCliente().getDui())){
                 return false;
@@ -71,7 +71,42 @@ public class Hotel extends Auxiliar{
         }
         return true;
     }
-       
-
+       boolean verificarHabitacion(String a,int b){
+        for(Habitacion Hab: habitaciones){
+            if((a.equals(Hab.getPiso()))&&(Hab.getCorrelativo() == b)){
+               if(Hab.IsAvailable() && !Hab.IsReserved()){
+                   return true;
+               }
+            }
+        }
+        return false;
+    }
+       void ReservarHabitacion(String a,int b){
+        for(Habitacion Hab: habitaciones){
+            if((a.equals(Hab.getPiso()))&&(Hab.getCorrelativo() == b)){
+               Hab.setIsReserved(true);
+               }
+            }
+        }
         
-}
+   
+       
+       void HacerReservacion(String dui,String a, int b){
+          if(verificarCliente(dui)){
+              if(verificarHabitacion(a,b)){
+                  Cliente c= new Cliente(dui);
+                  Paquete p = new Paquete();
+                  ReservarHabitacion(a,b);
+                  for(Habitacion Hab: habitaciones){
+            if((a.equals(Hab.getPiso()))&&(Hab.getCorrelativo() == b)){
+               Reservacion v = new Reservacion(7,Hab,p,c);
+               reservaciones.add(v);
+               }
+            } 
+                  
+              }
+          }
+       }
+ }
+        
+

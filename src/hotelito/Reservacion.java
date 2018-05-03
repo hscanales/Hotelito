@@ -17,6 +17,14 @@ public class Reservacion extends Hotel{
     private Paquete paquete;
     private Cliente cliente;
 
+    public Reservacion(int dias, Habitacion habitacion, Paquete paquete, Cliente cliente) {
+        this.dias = dias;
+        this.habitacion = habitacion;
+        this.paquete = paquete;
+        this.cliente = cliente;
+        
+    }
+
     public Cliente getCliente() {
         return cliente;
     }
