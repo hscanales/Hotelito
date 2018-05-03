@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class AuxiliarHab {
     ArrayList<Habitacion> Habitaciones = new ArrayList<>();
     Habitacion hab = new Habitacion();
-    
+/*    
     public void DeshabilitarPiso(char a){
         for(Habitacion Hab: Habitaciones){
             if(Hab.getPiso() == a){
@@ -37,7 +37,7 @@ public class AuxiliarHab {
         }
     }
     
-    
+  */  
     
     
     
