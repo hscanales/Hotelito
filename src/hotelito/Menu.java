@@ -85,7 +85,7 @@ public class Menu extends Auxiliar {
                     int r = sc.nextInt();
                     hotel.DeshabilitarHab(s2, r);
                     break;
-                    
+
                 case 6:
                     hotel.CrearPaquete();
                     break;
@@ -119,7 +119,7 @@ public class Menu extends Auxiliar {
                     hotel.HacerReservacion(dui, habb, haba);
                     break;
                 case 2:
-                    
+
                     print("Ingrese Letra de la habitacion a desabilitar: ");
                     String s2 = sc1.nextLine();
                     print("Ingrese Correlativo de la habitacion a desabilitar: ");
@@ -127,7 +127,7 @@ public class Menu extends Auxiliar {
                     hotel.DeshabilitarHab(s2, r);
                     break;
                 case 3:
-                    
+
                     print("Habitacines Disponibles");
                     hotel.HabitacionesDisponibles();
                     break;
