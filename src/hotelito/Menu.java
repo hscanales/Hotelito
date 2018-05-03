@@ -13,6 +13,8 @@ import java.util.Scanner;
  */
 public class Menu extends Auxiliar {
 Scanner sc = new Scanner(System.in);
+Hotel hotel= new Hotel();
+
     public Menu() {
     }
 
@@ -28,9 +30,11 @@ Scanner sc = new Scanner(System.in);
                     break;
                 case 1:
                     deployOp1();
+                    
                     break;
                 case 2:
                     print("Vamos a Realizar una reservacion");
+                    hotel.HabitacionesDisponibles();
                     break;
                 case 3:
                     print("Vamos a Modificar un cliente");
