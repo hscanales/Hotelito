@@ -67,7 +67,7 @@ public class Menu extends Auxiliar {
     void deployOp1() {
         boolean flag = true;
         while (flag) {
-            print("Configuracion del Hotel \n Menu \n 0- Regresar \n 1- Desabilitar Piso \n 2- Desabilitar Habitacion \n 3- Definir Precio de Habitacion \n 4- Agregar Piso \n 5- Agregar Habitacion \n 6- Agregar Paquete \n 7- Mostrar paquetes actuales: \n Ingrese su opcion: ");
+            print("Configuracion del Hotel \n Menu \n 0- Regresar \n 1- Desabilitar Piso \n 2- Desabilitar Habitacion \n 3- Habilitar Piso \n 4- Habilitar Habitacion \n 5- Definir Precio de Habitacion \n 6- Agregar Piso \n 7- Agregar Habitacion \n 8- Agregar Paquete \n 9- Mostrar paquetes actuales: \n Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
                 case 0:
@@ -86,8 +86,21 @@ public class Menu extends Auxiliar {
                     int r = sc.nextInt();
                     hotel.DeshabilitarHab(s2, r);
                     break;
-                    
                 case 3:
+                    print("Ingrese Letra del piso a habilitar: ");
+                    String s3 = sc1.nextLine();
+
+                    hotel.HabilitarPiso(s3);
+                    break;
+                case 4:
+                    print("Ingrese Letra de la habitacion a habilitar: ");
+                    String s4 = sc1.nextLine();
+                    print("Ingrese Correlativo de la habitacion a habilitar: ");
+                    int r2 = sc.nextInt();
+                    hotel.HabilitarHab(s4, r2);
+                    break;
+                    
+                case 5:
                     print("Ingrese la letra de la habitacion para poner el costo: ");
                     String l = sc1.nextLine();
                     print("Ingrese el correlativo de la habitacion para poner el costo: ");
@@ -97,10 +110,10 @@ public class Menu extends Auxiliar {
                     hotel.PonerPrecio(l, l2, c);
                     break;
 
-                case 6:
+                case 8:
                     hotel.CrearPaquete();
                     break;
-                case 7:
+                case 9:
                     hotel.MostrarPaquetes();
                     break;
                 default:
