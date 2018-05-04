@@ -69,16 +69,16 @@ public class Menu extends Auxiliar {
         while (flag) {
             print("Configuracion del Hotel \n");
             print("Menu \n");
-            print("0- Regresar \n");
-            print("1- Desabilitar Piso \n");
-            print("2- Desabilitar Habitacion \n");
-            print("3- Habilitar Piso \n");
-            print("4- Habilitar Habitacion \n");
-            print("5- Definir Precio de Habitacion \n");
-            print("6- Agregar Piso \n");
-            print("7- Agregar Habitacion \n");
-            print("8- Agregar Paquete \n");
-            print("9- Mostrar paquetes actuales: \n");
+            print("0- Regresar.");
+            print("1- Desabilitar Piso.");
+            print("2- Desabilitar Habitacion.");
+            print("3- Habilitar Piso.");
+            print("4- Habilitar Habitacion.");
+            print("5- Definir Precio de Habitacion.");
+            print("6- Agregar Piso.");
+            print("7- Agregar Habitacion.");
+            print("8- Agregar Paquete.");
+            print("9- Mostrar paquetes actuales:");
             print("Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
@@ -142,13 +142,13 @@ public class Menu extends Auxiliar {
     void deployOp2() {
         boolean flag = true;
         while (flag) {
-            print("Reservaciones: \n"); 
+            print("Reservaciones: "); 
             print("Menu \n");
-            print("1- Hacer Reservacion \n");
-            print("2- Eliminar Reservacion \n");
-            print("3- Habitaciones Disponibles \n");
-            print("4- Agregar Piso \n");
-            print("5- Agregar Habitacion \n");
+            print("1- Hacer Reservacion.");
+            print("2- Eliminar Reservacion.");
+            print("3- Habitaciones Disponibles.");
+            print("4- Agregar Piso.");
+            print("5- Agregar Habitacion.");
             print("Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
