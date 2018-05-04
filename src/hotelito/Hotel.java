@@ -192,10 +192,8 @@ public class Hotel extends Auxiliar {
         }
         else{
             for (Reservacion most: reservaciones){
-                print(most.getCliente().getPrimerNom());
-                print(most.getCliente().getSegundoNom());
-                print(most.getCliente().getPrimerApe());
-                print(most.getCliente().getSegundoApe());
+                print(most.getCliente().getPrimerNom() + " " + most.getCliente().getSegundoNom() + " " + most.getCliente().getPrimerApe() + " " + most.getCliente().getSegundoApe());
+                
                 System.out.println(most.getDias()+" "+most.getHabitacion().getPiso()+most.getHabitacion().getCorrelativo()+" "+most.getCliente().getDui());      
         }
 
