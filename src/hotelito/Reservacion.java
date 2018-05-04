@@ -18,7 +18,9 @@ public class Reservacion extends Hotel{
     private Paquete paquete;
     private Cliente cliente;
     private double total;
-
+    
+    public Reservacion(){}
+    
     public Reservacion(int dias, Habitacion habitacion, Paquete paquete, Cliente cliente) {
         this.dias = dias;
         this.habitacion = habitacion;
@@ -30,7 +32,7 @@ public class Reservacion extends Hotel{
         
     }
     public void Prin(){
-        System.out.printf(paquete.getCosto()+ " "+ habitacion.getCosto() + " total: " +total);
+        System.out.println(paquete.getCosto()+ " + "+ habitacion.getCosto() + " total: " +total);
     }
 
     public Cliente getCliente() {
@@ -69,21 +71,17 @@ public class Reservacion extends Hotel{
     }
    
     
-    public void ValidarDias(){
-        int flag = 1;
-        while(flag == 1){
+    public int ValidarDias(){
+        while(true){
             int dia;
             Scanner leer = new Scanner(System.in);
             System.out.println("Ingrese la cantidad de dias");
             dia = leer.nextInt();
-            
             if (dia <= 7){
                 setDias(dia);
-                flag = 0;
+                return dia;
             }
-            else{
-                System.err.println("La cantidad de dias que ingreso es mayor que el limite ");
-            }
+            System.err.println("La cantidad de dias que ingreso es mayor que el limite ");
         }
     }
 }
