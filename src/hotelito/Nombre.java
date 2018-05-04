@@ -51,7 +51,7 @@ public class Nombre {
         this.SegundoApe = SegundoApe;
     }
     
-    public String ValidarPrimerNombre(String n){
+    public boolean ValidarPrimerNombre(String n){
         boolean x=false;
         Scanner in = new Scanner(System.in);
         while(n.length()==0){
@@ -71,11 +71,11 @@ public class Nombre {
                 x=true;
             }
         }
-        return n;
+        return true;
 
     }
     
-    public String ValidarSegundoNombre(String n){
+    public boolean ValidarSegundoNombre(String n){
         boolean x=false;
         Scanner in = new Scanner(System.in);
         while(x==false){
@@ -92,11 +92,11 @@ public class Nombre {
             }
         }
         
-        return n;
+        return true;
 
     }
     
-    public String ValidarPrimerApellido(String n){
+    public boolean ValidarPrimerApellido(String n){
         boolean y=false;
         Scanner in = new Scanner(System.in);
         while(n.length()==0){
@@ -117,11 +117,11 @@ public class Nombre {
             }
         }
         
-        return n;
+        return true;
 
     }
     
-    public String ValidarSegundoApellido(String n){
+    public boolean ValidarSegundoApellido(String n){
         boolean y=false;
         Scanner in = new Scanner(System.in);
         while(y==false){
@@ -138,7 +138,7 @@ public class Nombre {
             }
         }
         
-        return n;
+        return true;
 
     }
     

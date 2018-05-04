@@ -1,4 +1,4 @@
-/*
+    /*
  * 
  * 
  * 
@@ -6,6 +6,7 @@
 package hotelito;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 /**
  *
@@ -120,7 +121,7 @@ public class Menu extends Auxiliar {
                     print("Ingrese el costo de la habitacion: ");
                     double c = sc.nextDouble();
                     hotel.PonerPrecio(l, l2, c);
-                    break;
+                     break;
                 
                 //case 6:
                     
@@ -187,6 +188,26 @@ public class Menu extends Auxiliar {
         }
     }   
     void deployOp3(){
+        boolean flag = true;
+        while (flag) {
+            print("Reservaciones: "); 
+            print("Menu");
+            print("1- Modificar Cliente");
+            print("Ingrese su opcion: ");
+            int op = sc.nextInt();
+            switch (op) {
+                case 0:
+                    flag = false;
+                    break;
+                case 1:
+                    print("Modificando al cliente");
+                    
+                    break;
+                default:
+                    print("Ingreso una opcion no valida");
+                    break;
+            }
+        }
         
     }
 }

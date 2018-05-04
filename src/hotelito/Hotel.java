@@ -16,6 +16,7 @@ public class Hotel extends Auxiliar {
     ArrayList<Habitacion> habitaciones = new ArrayList<>();
     ArrayList<Reservacion> reservaciones = new ArrayList<>();
     ArrayList<Paquete> paquetes = new ArrayList<>();
+    ArrayList<Cliente> cliente = new ArrayList<>();
     ArrayList<String> hab = new ArrayList<>();
     private int npisos = 6;
 
@@ -289,7 +290,6 @@ public class Hotel extends Auxiliar {
                 System.out.print(paquete.getNombre());
             });
             n();
-        }
+        }   
     }
-
 }

@@ -92,26 +92,6 @@ public class Cliente extends Nombre{
             return true;
         }
         return false;
-    }
-    
-    /* Validar el costo en el menu, para despuestio 
-    public double validarCosto(double c){
-        boolean y=false;
-        Scanner in = new Scanner(System.in);
-        while(y==false){
-            try{
-                System.out.println("Escriba un apellido con letras.");
-                y=true;
-                
-            }
-            catch (InputMismatchException f){
-                System.err.println("Ingrese un dato numerico.");
-                c=in.nextDouble();
-                y=false;
-            }
-        }
-        
-        return c;
-    }*/
+    }    
     
 }
