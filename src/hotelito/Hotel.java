@@ -6,6 +6,7 @@
 package hotelito;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -18,6 +19,7 @@ public class Hotel extends Auxiliar {
     ArrayList<Paquete> paquetes = new ArrayList<>();
     ArrayList<Cliente> cliente = new ArrayList<>();
     ArrayList<String> hab = new ArrayList<>();
+    Scanner in = new Scanner(System.in);
     private int npisos = 6;
 
     public Hotel() {
@@ -270,5 +272,28 @@ public class Hotel extends Auxiliar {
             });
             n();
         }   
+    }
+    
+    void ModHabitacion(String dui){
+        int flag = 0;
+        
+        while(flag == 0){
+            int cont = 0;
+            for (Reservacion rev : reservaciones) {
+                cont++;
+                if (dui.equals(rev.getCliente().getDui())) {
+                    System.out.println("Ingrese el piso a cambiar: ");
+                    String a = in.nextLine();
+                    System.out.println("Ingrese el correlativo a cambiar: ");
+                    int c = in.nextInt();
+                    rev.getHabitacion().setPiso(a);
+                    rev.getHabitacion().setCorrelativo(c);
+                    flag = 1;
+                }
+            }
+            if (flag == 0){
+                System.err.println("El numero de DUI ingresado no es valido.");
+            }
+        }
     }
 }
