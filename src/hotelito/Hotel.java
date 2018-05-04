@@ -19,7 +19,7 @@ public class Hotel extends Auxiliar {
     ArrayList<Paquete> paquetes = new ArrayList<>();
     ArrayList<Cliente> cliente = new ArrayList<>();
     ArrayList<String> hab = new ArrayList<>();
-    Reservacion re = new Reservacion();
+    //Reservacion re = new Reservacion();
     Scanner in = new Scanner(System.in);
     private int npisos = 6;
 
@@ -313,7 +313,7 @@ public class Hotel extends Auxiliar {
                 cont++;
                 if (dui.equals(rev.getCliente().getDui())) {
                     System.out.println("Ingrese el numero de dias a cambiar: ");
-                    int c =re.ValidarDias();
+                    int c =rev.ValidarDias();
                     rev.setDias(c);
                     flag = 1;
                 }
