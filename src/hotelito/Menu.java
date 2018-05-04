@@ -156,7 +156,7 @@ public class Menu extends Auxiliar {
                     flag = false;
                     break;
                 case 1:
-                    print("Ingrese los siguientes datos");
+                    print("Ingrese el DUI del cliente y La habitacion deseeada");
                     print("DUI: ");
                     String dui = sc1.nextLine();
                     print("Habitación");
@@ -164,9 +164,7 @@ public class Menu extends Auxiliar {
                     String habb = sc2.nextLine();
                     print("Correlativo: ");
                     int haba = sc.nextInt();
-                    Reservacion re = new Reservacion();
-                    int dias = re.ValidarDias();
-                    hotel.HacerReservacion(dui, habb, haba, PaqueteS(), dias);
+                    hotel.HacerReservacion(dui, habb, haba);
                     break;
                 case 2:
                     print("Ingrese el dui del cliente para eliminar la reservacion: ");
@@ -190,20 +188,5 @@ public class Menu extends Auxiliar {
     }   
     void deployOp3(){
         
-    }
-    
-    Paquete PaqueteS(){
-        print("Seleccione el paquete deseado.");
-        Hotel H = new Hotel();
-        String n;
-        for (int i = 0; H.getPaquetes().size() > i; i++){
-            n = String.valueOf(i+1);
-            print(n + " " + H.getPaquetes().get(i).getNombre());
-        }
-        Scanner leer = new Scanner(System.in);
-        int pa;
-        pa = leer.nextInt();
-        pa = pa-1;
-        return H.getPaquetes().get(pa);
     }
 }
