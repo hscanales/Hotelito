@@ -67,7 +67,19 @@ public class Menu extends Auxiliar {
     void deployOp1() {
         boolean flag = true;
         while (flag) {
-            print("Configuracion del Hotel \n Menu \n 0- Regresar \n 1- Desabilitar Piso \n 2- Desabilitar Habitacion \n 3- Habilitar Piso \n 4- Habilitar Habitacion \n 5- Definir Precio de Habitacion \n 6- Agregar Piso \n 7- Agregar Habitacion \n 8- Agregar Paquete \n 9- Mostrar paquetes actuales: \n Ingrese su opcion: ");
+            print("Configuracion del Hotel \n");
+            print("Menu \n");
+            print("0- Regresar \n");
+            print("1- Desabilitar Piso \n");
+            print("2- Desabilitar Habitacion \n");
+            print("3- Habilitar Piso \n");
+            print("4- Habilitar Habitacion \n");
+            print("5- Definir Precio de Habitacion \n");
+            print("6- Agregar Piso \n");
+            print("7- Agregar Habitacion \n");
+            print("8- Agregar Paquete \n");
+            print("9- Mostrar paquetes actuales: \n");
+            print("Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
                 case 0:
