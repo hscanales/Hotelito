@@ -199,28 +199,26 @@ public class Menu extends Auxiliar {
     
     Paquete PaqueteS(){
         print("Seleccione el paquete deseado.");
-        Hotel H = new Hotel();
         String n;
-        for (int i = 0; H.getPaquetes().size() > i; i++){
+        for (int i = 0; hotel.getPaquetes().size() > i; i++){
             n = String.valueOf(i+1);
-            print(n + " " + H.getPaquetes().get(i).getNombre());
+            print(n + " " + hotel.getPaquetes().get(i).getNombre());
         }
         Scanner leer = new Scanner(System.in);
         int pa;
         pa = leer.nextInt();
         pa = pa-1;
-        return H.getPaquetes().get(pa);
+        return hotel.getPaquetes().get(pa);
     }
     
     void ModificarR(){
-        Hotel H = new Hotel();
         System.out.printf("Ingrese DUI: ");
         String dui = sc1.nextLine();
         int flag = 0;
         
         while(flag == 0){
             int cont = 0;
-            for (Reservacion rev : H.reservaciones) {
+            for (Reservacion rev : hotel.reservaciones) {
                 cont++;
                 if (dui.equals(rev.getCliente().getDui())) {
                     flag = 1;
