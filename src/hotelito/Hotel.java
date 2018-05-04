@@ -182,8 +182,22 @@ public class Hotel extends Auxiliar {
         }
 
     }
+    
+    void MostrarReservacion(){
+        if (reservaciones.isEmpty()){
+            System.out.println("GPI .l.");
+        }
+        else{
+            for (Reservacion most: reservaciones){
+            //habitacion, letra y correlativo, cant hab, dias y paquete, nombre y apellido primero
+                
+            }
+            
+        }
+    }
 
-    void EleminarReservacion(String dui) {
+
+    void EliminarReservacion(String dui) {
         int cont = 0;
         for (Reservacion rev : reservaciones) {
             cont++;

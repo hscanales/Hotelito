@@ -69,16 +69,16 @@ public class Menu extends Auxiliar {
         while (flag) {
             print("Configuracion del Hotel \n");
             print("Menu \n");
-            print("0- Regresar \n");
-            print("1- Desabilitar Piso \n");
-            print("2- Desabilitar Habitacion \n");
-            print("3- Habilitar Piso \n");
-            print("4- Habilitar Habitacion \n");
-            print("5- Definir Precio de Habitacion \n");
-            print("6- Agregar Piso \n");
-            print("7- Agregar Habitacion \n");
-            print("8- Agregar Paquete \n");
-            print("9- Mostrar paquetes actuales: \n");
+            print("0- Regresar.");
+            print("1- Desabilitar Piso.");
+            print("2- Desabilitar Habitacion.");
+            print("3- Habilitar Piso.");
+            print("4- Habilitar Habitacion.");
+            print("5- Definir Precio de Habitacion.");
+            print("6- Agregar Piso.");
+            print("7- Agregar Habitacion.");
+            print("8- Agregar Paquete.");
+            print("9- Mostrar paquetes actuales:");
             print("Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
@@ -142,14 +142,15 @@ public class Menu extends Auxiliar {
     void deployOp2() {
         boolean flag = true;
         while (flag) {
-            print("Reservaciones: \n"); 
+            print("Reservaciones: "); 
             print("Menu \n");
-            print("1- Hacer Reservacion \n");
-            print("2- Eliminar Reservacion \n");
-            print("3- Habitaciones Disponibles \n");
-            print("4- Agregar Piso \n");
-            print("5- Agregar Habitacion \n");
+            print("1- Hacer Reservacion.");
+            print("2- Eliminar Reservacion.");
+            print("3- Habitaciones Disponibles.");
+            print("4- Agregar Piso.");
+            print("5- Agregar Habitacion.");
             print("Ingrese su opcion: ");
+            print("Reservaciones \n Menu \n 1- Hacer Reservacion \n 2- Eliminar Reservacion \n 3- Habitaciones Disponibles \n Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
                 case 0:
@@ -161,22 +162,22 @@ public class Menu extends Auxiliar {
                     String dui = sc1.nextLine();
                     String habb = sc2.nextLine();
                     int haba = sc.nextInt();
-
                     hotel.HacerReservacion(dui, habb, haba);
                     break;
                 case 2:
-
-                    print("Ingrese Letra de la habitacion a desabilitar: ");
+                    print("Ingrese el dui del cliente para eliminar la reservacion: ");
                     String s2 = sc1.nextLine();
-                    print("Ingrese Correlativo de la habitacion a desabilitar: ");
-                    int r = sc.nextInt();
-                    hotel.DeshabilitarHab(s2, r);
+                    hotel.EliminarReservacion(s2);
                     break;
                 case 3:
 
                     print("Habitacines Disponibles");
                     hotel.HabitacionesDisponibles();
                     break;
+                    
+                case 4:
+                    print("Mostrar reservaciones");
+                    
                 default:
                     print("Ingreso una opcion no valida");
                     break;
