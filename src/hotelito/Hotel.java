@@ -22,23 +22,22 @@ public class Hotel extends Auxiliar {
 
     public Hotel() {
         String[] pisos = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
-        Paquete premium = new Paquete(150,"Descripcion pendiente","Premiun","1");
-        Paquete basico = new Paquete(10,"Descripcion pendiente","Basico","2");
-        
+        Paquete premium = new Paquete(150, "Descripcion pendiente", "Premiun", "1");
+        Paquete basico = new Paquete(10, "Descripcion pendiente", "Basico", "2");
+
         paquetes.add(basico);
         paquetes.add(premium);
-        
+
         for (int i = 1; i <= npisos; i++) {
             for (int j = 1; j <= 10; j++) {
                 String n = String.valueOf(j);
-                if (i >= npisos-3){
+                if (i >= npisos - 3) {
                     if (j % 2 == 0) {
                         habitaciones.add(new Habitacion("Double", 165, j, pisos[i - 1], false, false));
                     } else {
                         habitaciones.add(new Habitacion("Single", 137.5, j, pisos[i - 1], false, false));
                     }
-                }
-                else{
+                } else {
                     if (j % 2 == 0) {
                         habitaciones.add(new Habitacion("Double", 150, j, pisos[i - 1], false, false));
                     } else {
@@ -49,21 +48,23 @@ public class Hotel extends Auxiliar {
             }
         }
     }
-    
-    void setNpisos(int npisos){
+
+    void setNpisos(int npisos) {
         this.npisos = npisos;
-    } 
-    int getNpisos(){
+    }
+
+    int getNpisos() {
         return npisos;
     }
-    
-    public ArrayList<Paquete> getPaquetes(){
+
+    public ArrayList<Paquete> getPaquetes() {
         return paquetes;
     }
-    public void setPaquetes(ArrayList<Paquete> paquetes){
+
+    public void setPaquetes(ArrayList<Paquete> paquetes) {
         this.paquetes = paquetes;
     }
-    
+
     void HabitacionesDisponibles() {
         print("Las Habitaciones disponibles son: ");
         habitaciones.forEach((Habitacion habitacion) -> {
@@ -90,7 +91,7 @@ public class Hotel extends Auxiliar {
             }
         }
     }
-    
+
     void HabilitarPiso(String a) {
 
         for (Habitacion Hab : habitaciones) {
@@ -104,13 +105,14 @@ public class Hotel extends Auxiliar {
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
                 Hab.setIsAvailable(false);
+                Hab.setIsReserved(false);
             }
         }
     }
-    
-    void PonerPrecio(String a, int b, double c){
-        for(Habitacion Hab: habitaciones){
-            if ((a.equals(Hab.getPiso())) && Hab.getCorrelativo() == b){
+
+    void PonerPrecio(String a, int b, double c) {
+        for (Habitacion Hab : habitaciones) {
+            if ((a.equals(Hab.getPiso())) && Hab.getCorrelativo() == b) {
                 Hab.setCosto(c);
             }
         }
@@ -176,9 +178,9 @@ public class Hotel extends Auxiliar {
             System.out.println("No se hizo la reservacion ");
         }
     }
-    
-    void MostrarReservacion(){
-        if (reservaciones.isEmpty()){
+
+    void MostrarReservacion() {
+        if (reservaciones.isEmpty()) {
             System.out.println("No hay reservaciones hechas");
         }
         else{
@@ -187,21 +189,37 @@ public class Hotel extends Auxiliar {
             //habitacion, letra y correlativo, cant hab, dias y paquete, nombre y apellido primero
                 
             }
-            
+
         }
     }
 
-
     void EliminarReservacion(String dui) {
         int cont = 0;
+        int index = 0;
+        boolean i = false;
+        String habP = "";
+        int habC = 0;
         for (Reservacion rev : reservaciones) {
-            cont++;
 
             if (dui.equals(rev.getCliente().getDui())) {
-                reservaciones.remove(cont);
+                index = cont;
+                i = true;
+                habP = rev.getHabitacion().getPiso();
+                habC = rev.getHabitacion().getCorrelativo();
             }
+            cont++;
 
         }
+        if (i) {
+            reservaciones.remove(index);
+            for (Habitacion hab : habitaciones) {
+                if (hab.getPiso().equals(habP) && hab.getCorrelativo() == habC) {
+                    HabilitarHab(habP, habC);
+
+                }
+            }
+        }
+
     }
 
     void CrearPaquete() {

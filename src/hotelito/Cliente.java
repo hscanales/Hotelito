@@ -13,9 +13,9 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class Cliente extends Nombre{
-    private Reservacion res;
-    private String nombre, tarcre, dui;
-    private float costo, coston;
+    
+    private String tarcre, dui;
+  
     
     public Cliente (){}
     
@@ -23,37 +23,22 @@ public class Cliente extends Nombre{
         this.dui = dui;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+ 
     public void setTarcre(String tarcre) {
         this.tarcre = tarcre;
     }
     public void setDui(String dui) {
         this.dui = dui;
     }
-    public void setCosto(float costo) {
-        this.costo = costo;
-    }
-    public void setCoston(float coston) {
-        this.coston = coston;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
+   
+ 
     public String getTarcre() {
         return tarcre;
     }
     public String getDui() {
         return dui;
     }
-    public float getCosto() {
-        return costo;
-    }
-    public float getCoston() {
-        return coston;
-    }
+  
     
     public void ValidarTarCre(){
         int flag = 1;
