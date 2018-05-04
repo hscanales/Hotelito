@@ -68,7 +68,7 @@ public class Menu extends Auxiliar {
         boolean flag = true;
         while (flag) {
             print("Configuracion del Hotel \n");
-            print("Menu \n");
+            print("Menu");
             print("0- Regresar.");
             print("1- Desabilitar Piso.");
             print("2- Desabilitar Habitacion.");
@@ -143,14 +143,13 @@ public class Menu extends Auxiliar {
         boolean flag = true;
         while (flag) {
             print("Reservaciones: "); 
-            print("Menu \n");
+            print("Menu");
             print("1- Hacer Reservacion.");
             print("2- Eliminar Reservacion.");
             print("3- Habitaciones Disponibles.");
             print("4- Agregar Piso.");
             print("5- Agregar Habitacion.");
             print("Ingrese su opcion: ");
-            print("Reservaciones \n Menu \n 1- Hacer Reservacion \n 2- Eliminar Reservacion \n 3- Habitaciones Disponibles \n Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
                 case 0:
@@ -159,8 +158,12 @@ public class Menu extends Auxiliar {
                 case 1:
 
                     print("Ingrese el DUI del cliente y La habitacion deseeada");
+                    print("DUI: ");
                     String dui = sc1.nextLine();
+                    print("Habitación");
+                    print("Piso: ");
                     String habb = sc2.nextLine();
+                    print("Correlativo: ");
                     int haba = sc.nextInt();
                     hotel.HacerReservacion(dui, habb, haba);
                     break;
