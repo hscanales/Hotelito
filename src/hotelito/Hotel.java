@@ -165,6 +165,10 @@ public class Hotel extends Auxiliar {
         if (verificarCliente(dui)) {
             if (verificarHabitacion(a, b)) {
                 Cliente c = new Cliente(dui);
+                c.ValidarPrimerNombre("0");
+                c.ValidarSegundoNombre("0");
+                c.ValidarPrimerApellido("0");
+                c.ValidarSegundoApellido("0");
                 ReservarHabitacion(a, b);
                 for (Habitacion Hab : habitaciones) {
                     if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
@@ -187,6 +191,10 @@ public class Hotel extends Auxiliar {
         }
         else{
             for (Reservacion most: reservaciones){
+                print(most.getCliente().getPrimerNom());
+                print(most.getCliente().getSegundoNom());
+                print(most.getCliente().getPrimerApe());
+                print(most.getCliente().getSegundoApe());
                 System.out.println(most.getDias()+" "+most.getHabitacion().getPiso()+most.getHabitacion().getCorrelativo()+" "+most.getCliente().getDui());      
         }
 

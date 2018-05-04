@@ -12,6 +12,7 @@ package hotelito;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
+
 public class Cliente extends Nombre{
     
     private String tarcre, dui;

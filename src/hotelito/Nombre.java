@@ -53,6 +53,7 @@ public class Nombre {
     
     public boolean ValidarPrimerNombre(String n){
         boolean x=false;
+        
         Scanner in = new Scanner(System.in);
         while(n.length()==0){
             System.out.println("No ha escrito nada. Ingrese un nombre: ");
@@ -62,8 +63,10 @@ public class Nombre {
             try{
                 Integer.parseInt(n);
                 System.out.println("Escriba un nombre con letras.");
-                n= in.next();
+                n= in.nextLine();
+                this.PrimerNom = n;
                 x=false;
+                
                 
             }
             catch (NumberFormatException f){
@@ -82,7 +85,8 @@ public class Nombre {
             try{
                 Integer.parseInt(n);
                 System.out.println("Escriba un nombre con letras.");
-                n= in.next();
+                n= in.nextLine();
+                this.SegundoNom = n;
                 x=false;
                 
             }
@@ -107,7 +111,8 @@ public class Nombre {
             try{
                 Integer.parseInt(n);
                 System.out.println("Escriba un apellido con letras.");
-                n= in.next();
+                n= in.nextLine();
+                this.PrimerApe = n;
                 y=false;
                 
             }
@@ -128,7 +133,8 @@ public class Nombre {
             try{
                 Integer.parseInt(n);
                 System.out.println("Escriba un apellido con letras.");
-                n= in.next();
+                n= in.nextLine();
+                this.SegundoApe = n;
                 y=false;
                 
             }
