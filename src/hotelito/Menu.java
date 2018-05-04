@@ -169,10 +169,8 @@ public class Menu extends Auxiliar {
                     print("Ingreso una opcion no valida");
                     break;
             }
-
         }
-    }
-    
+    }   
     void deployOp3(){
         
     }

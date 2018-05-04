@@ -24,6 +24,9 @@ public class Hotel extends Auxiliar {
         Paquete premiun= new Paquete(150,"Descripcion pendiente","Premiun","1");
         Paquete basico= new Paquete(10,"Descripcion pendiente","Basico","2");
         
+        paquetes.add(basico);
+        paquetes.add(premiun);
+        
         for (int i = 1; i <= npisos; i++) {
             for (int j = 1; j <= 10; j++) {
                 String n = String.valueOf(j);
@@ -166,6 +169,7 @@ public class Hotel extends Auxiliar {
             }
         }
         if (!flag) {
+            System.out.println(flag);
             System.out.println("no se hizo la reservacion ");
         }
 
