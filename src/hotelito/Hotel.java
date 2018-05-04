@@ -183,10 +183,10 @@ public class Hotel extends Auxiliar {
         if (reservaciones.isEmpty()) {
             System.out.println("No hay reservaciones hechas");
         }
-        else{
-            for (Reservacion most: reservaciones){
-                System.out.println(most.getDias()+" "+most.getHabitacion().getPiso()+most.getHabitacion().getCorrelativo()+" "+most.getCliente().getDui());
-            //habitacion, letra y correlativo, cant hab, dias y paquete, nombre y apellido primero
+         else {
+            for (Reservacion most : reservaciones) {
+                System.out.println(most.getHabitacion().getPiso() + most.getHabitacion().getCorrelativo());
+                //habitacion, letra y correlativo, cant hab, dias y paquete, nombre y apellido primero
                 
             }
 
