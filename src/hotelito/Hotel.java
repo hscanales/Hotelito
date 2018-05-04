@@ -141,6 +141,7 @@ public class Hotel extends Auxiliar {
     void ReservarHabitacion(String a, int b) {
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
+                print("hola");
                 Hab.setIsReserved(true);
             }
         }
@@ -155,12 +156,19 @@ public class Hotel extends Auxiliar {
                 System.out.print("PASASTE Habitacion");
                 Cliente c = new Cliente(dui);
                 Paquete p = new Paquete();
+                for(Paquete r : paquetes){
+                    if(r.getCodigo().equals("1")){
+                        print("ffff");
+                         p = r;
+                    }
+                }
                 ReservarHabitacion(a, b);
 
                 for (Habitacion Hab : habitaciones) {
                     if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
                         System.out.print("TSUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
                         Reservacion v = new Reservacion(6, Hab, p, c);
+                        v.Prin();
                         reservaciones.add(v);
                         flag = true;
                     }

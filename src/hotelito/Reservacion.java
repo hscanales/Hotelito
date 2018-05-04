@@ -17,7 +17,7 @@ public class Reservacion extends Hotel{
     private Habitacion habitacion;
     private Paquete paquete;
     private Cliente cliente;
-    private double total=(paquete.getCosto()*this.dias)+(habitacion.getCosto()*this.dias);
+    private double total;
 
     public Reservacion(int dias, Habitacion habitacion, Paquete paquete, Cliente cliente) {
         this.dias = dias;
@@ -25,6 +25,12 @@ public class Reservacion extends Hotel{
         this.paquete = paquete;
         this.cliente = cliente;
         
+        
+        this.total=(paquete.getCosto()*this.dias)+(habitacion.getCosto()*this.dias);
+        
+    }
+    public void Prin(){
+        System.out.printf(paquete.getCosto()+ " "+ habitacion.getCosto() + " total: " +total);
     }
 
     public Cliente getCliente() {
@@ -61,7 +67,7 @@ public class Reservacion extends Hotel{
     public void setTotal(double total) {
         this.total = total;
     }
-    
+   
     
     public void ValidarDias(){
         int flag = 1;
