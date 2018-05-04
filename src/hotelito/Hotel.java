@@ -19,6 +19,7 @@ public class Hotel extends Auxiliar {
     ArrayList<Paquete> paquetes = new ArrayList<>();
     ArrayList<Cliente> cliente = new ArrayList<>();
     ArrayList<String> hab = new ArrayList<>();
+    Reservacion re = new Reservacion();
     Scanner in = new Scanner(System.in);
     private int npisos = 6;
 
@@ -275,7 +276,7 @@ public class Hotel extends Auxiliar {
     }
     
     void ModHabitacion(String dui){
-        int flag = 0;
+        int flag = 0;     
         while(flag == 0){
             int cont = 0;
             for (Reservacion rev : reservaciones) {
@@ -291,26 +292,26 @@ public class Hotel extends Auxiliar {
                 }
             }
             if (flag == 0){
-                System.err.println("La reservacion que busca no esta dentro de la lista.");
+                System.err.println("La reservacion que busca no esta en la lista.");
             }
         }
     }
     
     void ModDias(String dui){
-        int flag = 0;
+        int flag = 0;     
         while(flag == 0){
             int cont = 0;
             for (Reservacion rev : reservaciones) {
                 cont++;
                 if (dui.equals(rev.getCliente().getDui())) {
-                    System.out.println("Ingrese el correlativo a cambiar: ");
-                    int c = in.nextInt();
+                    System.out.println("Ingrese el numero de dias a cambiar: ");
+                    int c =re.ValidarDias();
                     rev.setDias(c);
                     flag = 1;
                 }
             }
             if (flag == 0){
-                System.err.println("La reservacion que busca no esta dentro de la lista.");
+                System.err.println("La reservacion que busca no esta en la lista.");
             }
         }
     }

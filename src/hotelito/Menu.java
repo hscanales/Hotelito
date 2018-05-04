@@ -200,7 +200,7 @@ public class Menu extends Auxiliar {
             print("Reservaciones: "); 
             print("Menu");
             print("1- Modificar Cliente");
-            print("Ingrese su opcion: ");
+                                                                                                              print("Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
                 case 0:
@@ -245,7 +245,7 @@ public class Menu extends Auxiliar {
                 hotel.ModHabitacion(dui);
                 break;
             case 2:
-                
+                hotel.ModDias(dui);
                 break;
             case 3:
                 
