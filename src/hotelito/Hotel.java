@@ -276,7 +276,6 @@ public class Hotel extends Auxiliar {
     
     void ModHabitacion(String dui){
         int flag = 0;
-        
         while(flag == 0){
             int cont = 0;
             for (Reservacion rev : reservaciones) {
@@ -292,7 +291,26 @@ public class Hotel extends Auxiliar {
                 }
             }
             if (flag == 0){
-                System.err.println("El numero de DUI ingresado no es valido.");
+                System.err.println("La reservacion que busca no esta dentro de la lista.");
+            }
+        }
+    }
+    
+    void ModDias(String dui){
+        int flag = 0;
+        while(flag == 0){
+            int cont = 0;
+            for (Reservacion rev : reservaciones) {
+                cont++;
+                if (dui.equals(rev.getCliente().getDui())) {
+                    System.out.println("Ingrese el correlativo a cambiar: ");
+                    int c = in.nextInt();
+                    rev.setDias(c);
+                    flag = 1;
+                }
+            }
+            if (flag == 0){
+                System.err.println("La reservacion que busca no esta dentro de la lista.");
             }
         }
     }

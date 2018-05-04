@@ -235,20 +235,6 @@ public class Menu extends Auxiliar {
     void ModificarR(){
         System.out.printf("Ingrese DUI: ");
         String dui = sc1.nextLine();
-        int flag = 0;
-        
-        while(flag == 0){
-            int cont = 0;
-            for (Reservacion rev : hotel.reservaciones) {
-                cont++;
-                if (dui.equals(rev.getCliente().getDui())) {
-                    flag = 1;
-                }
-            }
-            if (flag == 0){
-                System.err.println("El numero de DUI ingresado no es valido.");
-            }
-        }
         print("El que se desea modificar.");
         print("1- Habitacion.");
         print("2- Cantidad de dias.");
@@ -256,7 +242,7 @@ public class Menu extends Auxiliar {
         int op = sc.nextInt();
         switch (op) {
             case 1:
-                
+                hotel.ModHabitacion(dui);
                 break;
             case 2:
                 
