@@ -67,7 +67,19 @@ public class Menu extends Auxiliar {
     void deployOp1() {
         boolean flag = true;
         while (flag) {
-            print("Configuracion del Hotel \n Menu \n 0- Regresar \n 1- Desabilitar Piso \n 2- Desabilitar Habitacion \n 3- Habilitar Piso \n 4- Habilitar Habitacion \n 5- Definir Precio de Habitacion \n 6- Agregar Piso \n 7- Agregar Habitacion \n 8- Agregar Paquete \n 9- Mostrar paquetes actuales: \n Ingrese su opcion: ");
+            print("Configuracion del Hotel \n");
+            print("Menu \n");
+            print("0- Regresar.");
+            print("1- Desabilitar Piso.");
+            print("2- Desabilitar Habitacion.");
+            print("3- Habilitar Piso.");
+            print("4- Habilitar Habitacion.");
+            print("5- Definir Precio de Habitacion.");
+            print("6- Agregar Piso.");
+            print("7- Agregar Habitacion.");
+            print("8- Agregar Paquete.");
+            print("9- Mostrar paquetes actuales:");
+            print("Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
                 case 0:
@@ -109,7 +121,10 @@ public class Menu extends Auxiliar {
                     double c = sc.nextDouble();
                     hotel.PonerPrecio(l, l2, c);
                     break;
-
+                
+                //case 6:
+                    
+                
                 case 8:
                     hotel.CrearPaquete();
                     break;
@@ -127,6 +142,14 @@ public class Menu extends Auxiliar {
     void deployOp2() {
         boolean flag = true;
         while (flag) {
+            print("Reservaciones: "); 
+            print("Menu \n");
+            print("1- Hacer Reservacion.");
+            print("2- Eliminar Reservacion.");
+            print("3- Habitaciones Disponibles.");
+            print("4- Agregar Piso.");
+            print("5- Agregar Habitacion.");
+            print("Ingrese su opcion: ");
             print("Reservaciones \n Menu \n 1- Hacer Reservacion \n 2- Eliminar Reservacion \n 3- Habitaciones Disponibles \n Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
@@ -159,10 +182,8 @@ public class Menu extends Auxiliar {
                     print("Ingreso una opcion no valida");
                     break;
             }
-
         }
-    }
-    
+    }   
     void deployOp3(){
         
     }
