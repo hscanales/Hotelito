@@ -22,11 +22,11 @@ public class Hotel extends Auxiliar {
 
     public Hotel() {
         String[] pisos = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
-        Paquete premiun= new Paquete(150,"Descripcion pendiente","Premiun","1");
-        Paquete basico= new Paquete(10,"Descripcion pendiente","Basico","2");
+        Paquete premium = new Paquete(150,"Descripcion pendiente","Premiun","1");
+        Paquete basico = new Paquete(10,"Descripcion pendiente","Basico","2");
         
         paquetes.add(basico);
-        paquetes.add(premiun);
+        paquetes.add(premium);
         
         for (int i = 1; i <= npisos; i++) {
             for (int j = 1; j <= 10; j++) {
@@ -55,6 +55,13 @@ public class Hotel extends Auxiliar {
     } 
     int getNpisos(){
         return npisos;
+    }
+    
+    public ArrayList<Paquete> getPaquetes(){
+        return paquetes;
+    }
+    public void setPaquetes(ArrayList<Paquete> paquetes){
+        this.paquetes = paquetes;
     }
     
     void HabitacionesDisponibles() {
@@ -97,7 +104,6 @@ public class Hotel extends Auxiliar {
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
                 Hab.setIsAvailable(false);
-                Hab.setIsReserved(false);
             }
         }
     }
@@ -149,40 +155,26 @@ public class Hotel extends Auxiliar {
         }
     }
 
-    void HacerReservacion(String dui, String a, int b) {
+    void HacerReservacion(String dui, String a, int b, Paquete p, int dia) {
         //HabitacionesDisponibles();
         boolean flag = false;
         if (verificarCliente(dui)) {
-            System.out.print("PASASTE VERIFICAR CLIENTE");
             if (verificarHabitacion(a, b)) {
-                System.out.print("PASASTE Habitacion");
                 Cliente c = new Cliente(dui);
-                Paquete p = new Paquete();
-                for(Paquete r : paquetes){
-                    if(r.getCodigo().equals("1")){
-                        print("ffff");
-                         p = r;
-                    }
-                }
                 ReservarHabitacion(a, b);
-
                 for (Habitacion Hab : habitaciones) {
                     if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
-                        System.out.print("TSUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
-                        Reservacion v = new Reservacion(6, Hab, p, c);
+                        Reservacion v = new Reservacion(dia, Hab, p, c);
                         v.Prin();
                         reservaciones.add(v);
                         flag = true;
                     }
                 }
-
             }
         }
         if (!flag) {
-            System.out.println(flag);
-            System.out.println("no se hizo la reservacion ");
+            System.out.println("No se hizo la reservacion ");
         }
-
     }
     
     void MostrarReservacion(){
@@ -200,45 +192,16 @@ public class Hotel extends Auxiliar {
     }
 
 
-  void EliminarReservacion(String dui) {
+    void EliminarReservacion(String dui) {
         int cont = 0;
-        int j=0;
-        int a=0;
-        String d = "";
-        boolean k = false;
         for (Reservacion rev : reservaciones) {
-            
-
-            if (dui.equals(rev.getCliente().getDui())) {
-                
-                j = cont;
-                k = true;
-                a = rev.getHabitacion().getCorrelativo();
-                d = rev.getHabitacion().getPiso();
-                
-                
-            }
-            /*else{
-                print("GGGGG");
-                reservaciones.remove(rev);
-              
-                print("HGGGGHH");
-            }*/
             cont++;
 
-        }
-        if(k){
-            print("HOLA");
-            reservaciones.remove(j);
-            for(Habitacion h: habitaciones){
-                if(d.equals(h.getPiso()) && h.getCorrelativo() == a){
-                    print("Se habilita la habitacion" + " " + d + a);
-                    HabilitarHab(d,a);
-                }
+            if (dui.equals(rev.getCliente().getDui())) {
+                reservaciones.remove(cont);
             }
+
         }
-       
-        
     }
 
     void CrearPaquete() {
