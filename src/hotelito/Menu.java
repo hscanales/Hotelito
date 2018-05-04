@@ -168,7 +168,7 @@ public class Menu extends Auxiliar {
                     int haba = sc.nextInt();
                     Reservacion re = new Reservacion();
                     int dias = re.ValidarDias();
-                    hotel.HacerReservacion(dui, habb, haba, PaqueteS(), dias);
+                    hotel.HacerReservacion(dui, habb, haba, hotel.PaqueteS(), dias);
                     break;
                 case 2:
                     print("Ingrese el dui del cliente para eliminar la reservacion: ");
@@ -200,7 +200,7 @@ public class Menu extends Auxiliar {
             print("Reservaciones: "); 
             print("Menu");
             print("1- Modificar Cliente");
-                                                                                                              print("Ingrese su opcion: ");
+            print("Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
                 case 0:
@@ -218,23 +218,24 @@ public class Menu extends Auxiliar {
         
     }
     
-    Paquete PaqueteS(){
-        print("Seleccione el paquete deseado.");
-        String n;
-        for (int i = 0; hotel.getPaquetes().size() > i; i++){
-            n = String.valueOf(i+1);
-            print(n + " " + hotel.getPaquetes().get(i).getNombre());
-        }
-        Scanner leer = new Scanner(System.in);
-        int pa;
-        pa = leer.nextInt();
-        pa = pa-1;
-        return hotel.getPaquetes().get(pa);
-    }
-    
     void ModificarR(){
         System.out.printf("Ingrese DUI: ");
-        String dui = sc1.nextLine();
+        int flag = 0;
+        String dui = null;
+        int cont = 0;
+        while(flag == 0){
+            cont = 0;
+            dui = sc1.nextLine();
+            for (Reservacion rev : hotel.reservaciones) {
+                if (dui.equals(rev.getCliente().getDui())) {
+                    flag = 1;
+                }
+                cont++;
+            }
+            if (flag == 0){
+                System.err.println("El DUI que ingresó no esta registrado");
+            }
+        }
         print("El que se desea modificar.");
         print("1- Habitacion.");
         print("2- Cantidad de dias.");
@@ -242,13 +243,13 @@ public class Menu extends Auxiliar {
         int op = sc.nextInt();
         switch (op) {
             case 1:
-                hotel.ModHabitacion(dui);
+                hotel.ModHabitacion(cont-1);
                 break;
             case 2:
-                hotel.ModDias(dui);
+                hotel.ModDias(cont-1);
                 break;
             case 3:
-                
+                hotel.ModPaquete(cont-1);
                 break;
             default:
                 print("Ingreso una opcion no valida");

@@ -21,6 +21,7 @@ public class Hotel extends Auxiliar {
     ArrayList<String> hab = new ArrayList<>();
     //Reservacion re = new Reservacion();
     Scanner in = new Scanner(System.in);
+    Scanner in1 = new Scanner(System.in);
     private int npisos = 6;
 
     public Hotel() {
@@ -194,9 +195,8 @@ public class Hotel extends Auxiliar {
             for (Reservacion most: reservaciones){
                 print(most.getCliente().getPrimerNom() + " " + most.getCliente().getSegundoNom() + " " + most.getCliente().getPrimerApe() + " " + most.getCliente().getSegundoApe());
                 
-                System.out.println(most.getDias()+" "+most.getHabitacion().getPiso()+most.getHabitacion().getCorrelativo()+" "+most.getCliente().getDui());      
-        }
-
+                System.out.println(most.getDias()+" "+most.getHabitacion().getPiso()+most.getHabitacion().getCorrelativo()+" "+most.getCliente().getDui()+" "+most.getPaquete().getNombre());      
+            }
         }
     }
 
@@ -281,44 +281,46 @@ public class Hotel extends Auxiliar {
         }   
     }
     
-    void ModHabitacion(String dui){
-        int flag = 0;     
-        while(flag == 0){
-            int cont = 0;
-            for (Reservacion rev : reservaciones) {
-                cont++;
-                if (dui.equals(rev.getCliente().getDui())) {
-                    System.out.println("Ingrese el piso a cambiar: ");
-                    String a = in.nextLine();
-                    System.out.println("Ingrese el correlativo a cambiar: ");
-                    int c = in.nextInt();
-                    rev.getHabitacion().setPiso(a);
-                    rev.getHabitacion().setCorrelativo(c);
-                    flag = 1;
-                }
+    Paquete PaqueteS(){
+        print("Seleccione el paquete deseado.");
+        String n;
+        for (int i = 0; getPaquetes().size() > i; i++){
+            n = String.valueOf(i+1);
+            print(n + " " + getPaquetes().get(i).getNombre());
+        }
+        Scanner leer = new Scanner(System.in);
+        int pa;
+        pa = leer.nextInt();
+        pa = pa-1;
+        return getPaquetes().get(pa);
+    }
+    
+    void ModHabitacion(int pos){
+        int flag = 0;
+        String a;
+        int c;
+        while (flag == 0){
+            System.out.printf("Ingrese el piso de la habitacion a cambiar: ");
+            a = in1.nextLine();
+            System.out.printf("Ingrese el correlativo de la habitacion a cambiar: ");
+            c = in.nextInt();
+            if (verificarHabitacion(a, c)){
+                reservaciones.get(pos).getHabitacion().setPiso(a);
+                reservaciones.get(pos).getHabitacion().setCorrelativo(c);
+                flag = 1;
             }
             if (flag == 0){
-                System.err.println("La reservacion que busca no esta en la lista.");
+                System.err.println("La habitacion que ingreso no se encuentra disponible");
             }
         }
     }
     
-    void ModDias(String dui){
-        int flag = 0;     
-        while(flag == 0){
-            int cont = 0;
-            for (Reservacion rev : reservaciones) {
-                cont++;
-                if (dui.equals(rev.getCliente().getDui())) {
-                    System.out.println("Ingrese el numero de dias a cambiar: ");
-                    int c =rev.ValidarDias();
-                    rev.setDias(c);
-                    flag = 1;
-                }
-            }
-            if (flag == 0){
-                System.err.println("La reservacion que busca no esta en la lista.");
-            }
-        }
+    void ModDias(int pos){
+        int c = reservaciones.get(pos).ValidarDias();
+        reservaciones.get(pos).setDias(c);
+    }
+    
+    void ModPaquete(int pos){
+        reservaciones.get(pos).setPaquete(PaqueteS());
     }
 }
