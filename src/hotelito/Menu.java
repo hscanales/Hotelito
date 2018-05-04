@@ -109,7 +109,10 @@ public class Menu extends Auxiliar {
                     double c = sc.nextDouble();
                     hotel.PonerPrecio(l, l2, c);
                     break;
-
+                
+                //case 6:
+                    
+                
                 case 8:
                     hotel.CrearPaquete();
                     break;
@@ -127,7 +130,14 @@ public class Menu extends Auxiliar {
     void deployOp2() {
         boolean flag = true;
         while (flag) {
-            print("Reservaciones \n Menu \n 1- Hacer Reservacion \n 2- Eliminar Reservacion \n 3- Habitaciones Disponibles \n 4- Agregar Piso \n 5- Agregar Habitacion \n Ingrese su opcion: ");
+            print("Reservaciones: \n"); 
+            print("Menu \n");
+            print("1- Hacer Reservacion \n");
+            print("2- Eliminar Reservacion \n");
+            print("3- Habitaciones Disponibles \n");
+            print("4- Agregar Piso \n");
+            print("5- Agregar Habitacion \n");
+            print("Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
                 case 0:
