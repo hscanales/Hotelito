@@ -256,7 +256,6 @@ public class Menu extends Auxiliar {
         int op = sc.nextInt();
         switch (op) {
             case 1:
-                //enviar contador
                 
                 break;
             case 2:

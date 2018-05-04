@@ -183,7 +183,7 @@ public class Hotel extends Auxiliar {
         }
         else{
             for (Reservacion most: reservaciones){
-                System.out.println(most.getDias()+" "+most.getHabitacion().getPiso()+most.getHabitacion().getCorrelativo()+" "+most.getPaquete().getNombre()+" "+most.getCliente().getDui());
+                System.out.println(most.getHabitacion().getPiso()+most.getHabitacion().getCorrelativo());
             //habitacion, letra y correlativo, cant hab, dias y paquete, nombre y apellido primero
                 
             }
@@ -255,11 +255,4 @@ public class Hotel extends Auxiliar {
             n();
         }   
     }
-
-    void ModHabitacion(int c){
-        
-    }
-    
-    
-    
 }
