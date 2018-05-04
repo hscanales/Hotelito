@@ -127,7 +127,7 @@ public class Menu extends Auxiliar {
     void deployOp2() {
         boolean flag = true;
         while (flag) {
-            print("Reservaciones \n Menu \n 1- Hacer Reservacion \n 2- Eliminar Reservacion \n 3- Habitaciones Disponibles \n 4- Agregar Piso \n 5- Agregar Habitacion \n Ingrese su opcion: ");
+            print("Reservaciones \n Menu \n 1- Hacer Reservacion \n 2- Eliminar Reservacion \n 3- Habitaciones Disponibles \n Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
                 case 0:
@@ -139,22 +139,22 @@ public class Menu extends Auxiliar {
                     String dui = sc1.nextLine();
                     String habb = sc2.nextLine();
                     int haba = sc.nextInt();
-
                     hotel.HacerReservacion(dui, habb, haba);
                     break;
                 case 2:
-
-                    print("Ingrese Letra de la habitacion a desabilitar: ");
+                    print("Ingrese el dui del cliente para eliminar la reservacion: ");
                     String s2 = sc1.nextLine();
-                    print("Ingrese Correlativo de la habitacion a desabilitar: ");
-                    int r = sc.nextInt();
-                    hotel.DeshabilitarHab(s2, r);
+                    hotel.EliminarReservacion(s2);
                     break;
                 case 3:
 
                     print("Habitacines Disponibles");
                     hotel.HabitacionesDisponibles();
                     break;
+                    
+                case 4:
+                    print("Mostrar reservaciones");
+                    
                 default:
                     print("Ingreso una opcion no valida");
                     break;
