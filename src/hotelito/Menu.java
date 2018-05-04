@@ -147,7 +147,7 @@ public class Menu extends Auxiliar {
             print("1- Hacer Reservacion.");
             print("2- Eliminar Reservacion.");
             print("3- Habitaciones Disponibles.");
-            print("4- Agregar Piso.");
+            print("4- Mostrar Reservaciones");
             print("5- Agregar Habitacion.");
             print("Ingrese su opcion: ");
             print("Reservaciones \n Menu \n 1- Hacer Reservacion \n 2- Eliminar Reservacion \n 3- Habitaciones Disponibles \n Ingrese su opcion: ");
@@ -157,7 +157,6 @@ public class Menu extends Auxiliar {
                     flag = false;
                     break;
                 case 1:
-
                     print("Ingrese el DUI del cliente y La habitacion deseeada");
                     String dui = sc1.nextLine();
                     String habb = sc2.nextLine();
@@ -177,7 +176,7 @@ public class Menu extends Auxiliar {
                     
                 case 4:
                     print("Mostrar reservaciones");
-                    
+                    hotel.MostrarReservacion();
                 default:
                     print("Ingreso una opcion no valida");
                     break;

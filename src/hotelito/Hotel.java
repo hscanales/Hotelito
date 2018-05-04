@@ -185,10 +185,11 @@ public class Hotel extends Auxiliar {
     
     void MostrarReservacion(){
         if (reservaciones.isEmpty()){
-            System.out.println("GPI .l.");
+            System.out.println("No hay reservaciones hechas");
         }
         else{
             for (Reservacion most: reservaciones){
+                System.out.println(most.getHabitacion().getPiso()+most.getHabitacion().getCorrelativo());
             //habitacion, letra y correlativo, cant hab, dias y paquete, nombre y apellido primero
                 
             }
