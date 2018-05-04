@@ -18,9 +18,9 @@ public class Cliente extends Nombre{
     private float costo, coston;
     
     public Cliente (){}
+    
     public Cliente(String dui){
         this.dui = dui;
-        
     }
 
     public void setNombre(String nombre) {

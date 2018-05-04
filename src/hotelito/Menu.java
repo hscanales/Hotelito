@@ -144,11 +144,12 @@ public class Menu extends Auxiliar {
         while (flag) {
             print("Reservaciones: "); 
             print("Menu");
+            print("0- Regresar,");
             print("1- Hacer Reservacion.");
             print("2- Eliminar Reservacion.");
             print("3- Habitaciones Disponibles.");
             print("4- Mostrar Reservaciones");
-            print("5- Agregar Habitacion.");
+            print("5- Modificar Reservacion");
             print("Ingrese su opcion: ");
             int op = sc.nextInt();
             switch (op) {
@@ -157,12 +158,12 @@ public class Menu extends Auxiliar {
                     break;
                 case 1:
                     print("Ingrese los siguientes datos");
-                    print("DUI: ");
+                    System.out.printf("DUI: ");
                     String dui = sc1.nextLine();
                     print("Habitación");
-                    print("Piso: ");
+                    System.out.printf("Piso: ");
                     String habb = sc2.nextLine();
-                    print("Correlativo: ");
+                    System.out.printf("Correlativo: ");
                     int haba = sc.nextInt();
                     Reservacion re = new Reservacion();
                     int dias = re.ValidarDias();
@@ -182,6 +183,10 @@ public class Menu extends Auxiliar {
                 case 4:
                     print("Mostrar reservaciones");
                     hotel.MostrarReservacion();
+                    break;
+                case 5:
+                    ModificarR();
+                    break;
                 default:
                     print("Ingreso una opcion no valida");
                     break;
@@ -205,5 +210,44 @@ public class Menu extends Auxiliar {
         pa = leer.nextInt();
         pa = pa-1;
         return H.getPaquetes().get(pa);
+    }
+    
+    void ModificarR(){
+        Hotel H = new Hotel();
+        System.out.printf("Ingrese DUI: ");
+        String dui = sc1.nextLine();
+        int flag = 0;
+        
+        while(flag == 0){
+            int cont = 0;
+            for (Reservacion rev : H.reservaciones) {
+                cont++;
+                if (dui.equals(rev.getCliente().getDui())) {
+                    flag = 1;
+                }
+            }
+            if (flag == 0){
+                System.err.println("El numero de DUI ingresado no es valido.");
+            }
+        }
+        print("El que se desea modificar.");
+        print("1- Habitacion.");
+        print("2- Cantidad de dias.");
+        print("3- Paquete.");
+        int op = sc.nextInt();
+        switch (op) {
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            default:
+                print("Ingreso una opcion no valida");
+                break;
+        }
     }
 }
