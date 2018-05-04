@@ -96,6 +96,7 @@ public class Hotel extends Auxiliar {
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
                 Hab.setIsAvailable(false);
+                Hab.setIsReserved(false);
             }
         }
     }
@@ -198,16 +199,45 @@ public class Hotel extends Auxiliar {
     }
 
 
-    void EliminarReservacion(String dui) {
+  void EliminarReservacion(String dui) {
         int cont = 0;
+        int j=0;
+        int a=0;
+        String d = "";
+        boolean k = false;
         for (Reservacion rev : reservaciones) {
-            cont++;
+            
 
             if (dui.equals(rev.getCliente().getDui())) {
-                reservaciones.remove(cont);
+                
+                j = cont;
+                k = true;
+                a = rev.getHabitacion().getCorrelativo();
+                d = rev.getHabitacion().getPiso();
+                
+                
             }
+            /*else{
+                print("GGGGG");
+                reservaciones.remove(rev);
+              
+                print("HGGGGHH");
+            }*/
+            cont++;
 
         }
+        if(k){
+            print("HOLA");
+            reservaciones.remove(j);
+            for(Habitacion h: habitaciones){
+                if(d.equals(h.getPiso()) && h.getCorrelativo() == a){
+                    print("Se habilita la habitacion" + " " + d + a);
+                    HabilitarHab(d,a);
+                }
+            }
+        }
+       
+        
     }
 
     void CrearPaquete() {
