@@ -80,10 +80,6 @@ public class Paquete {
         this.Costo = Costo;
         this.descripcion = descripcion;
         this.nombre = nombre;
-
-public class Cliente extends Nombre{
-    
-    private String ta
         this.codigo = codigo;
     }
     
