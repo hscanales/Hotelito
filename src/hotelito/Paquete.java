@@ -51,7 +51,8 @@ public class Paquete {
         return nombre;
     }
     /**
-     * 
+     * Setter de la clase paquete
+     * del atributo Nombre
      * @param nombre 
      */
 
