@@ -7,6 +7,7 @@ package hotelito;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /**
  *  Clase Maestra de Hotel
@@ -224,14 +225,31 @@ public class Hotel extends Auxiliar {
     void HacerReservacion(String dui, String a, int b, Paquete p, int dia) {
         //HabitacionesDisponibles();
         a = a.toUpperCase();
+        String nom;
         boolean flag = false;
         if (verificarCliente(dui)) {
             if (verificarHabitacion(a, b)) {
                 Cliente c = new Cliente(dui);
-                c.ValidarPrimerNombre("0");
-                c.ValidarSegundoNombre("0");
-                c.ValidarPrimerApellido("0");
-                c.ValidarSegundoApellido("0");
+                print("Ingrese su nombre completo");
+                nom = in.nextLine();
+                StringTokenizer nombre = new StringTokenizer(nom);
+                int cont = 1;
+                while(nombre.hasMoreElements()){
+                    String n  = nombre.nextElement().toString();
+                    if (cont == 1){
+                        c.setPrimerNom(n);
+                    }
+                    if (cont == 2){
+                        c.setSegundoNom(n);
+                    }
+                    if (cont == 3){
+                        c.setPrimerApe(n);
+                    }
+                    if (cont == 4){
+                        c.setSegundoApe(n);
+                    }
+                    cont++;
+                }
                 ReservarHabitacion(a, b);
                 for (Habitacion Hab : habitaciones) {
                     if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {

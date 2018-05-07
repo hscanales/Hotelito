@@ -205,7 +205,12 @@ public class Menu extends Auxiliar {
                     hotel.MostrarReservacion();
                     break;
                 case 5:
-                    hotel.ModificarR();
+                    if (hotel.reservaciones.size() == 0){
+                        System.err.println("No se han hecho reservaciones");
+                    }
+                    else{
+                        hotel.ModificarR();
+                    }
                     break;
                 default:
                     print("Ingreso una opcion no valida");
