@@ -25,6 +25,9 @@ public class Nombre {
      * @return PrimerNom
      */
     public String getPrimerNom() {
+        if (PrimerNom == null){
+            return "";
+        }
         return PrimerNom;
     }
 /**
@@ -39,6 +42,9 @@ public class Nombre {
  * @return SegundoNom 
  */
     public String getSegundoNom() {
+        if (SegundoNom == null){
+            return "";
+        }
         return SegundoNom;
     }
 /**
@@ -56,6 +62,9 @@ public class Nombre {
      */
     
     public String getPrimerApe() {
+        if (PrimerApe == null){
+            return "";
+        }
         return PrimerApe;
     }
 /**
@@ -70,6 +79,9 @@ public class Nombre {
  * @return SegundoApe 
  */
     public String getSegundoApe() {
+        if (SegundoApe == null){
+            return "";
+        }
         return SegundoApe;
     }
 /**
