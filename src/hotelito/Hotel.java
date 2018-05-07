@@ -388,17 +388,27 @@ public class Hotel extends Auxiliar {
  * @return 
  */
     Paquete PaqueteS() {
-        print("Seleccione el paquete deseado.");
-        String n;
-        for (int i = 0; getPaquetes().size() > i; i++) {
-            n = String.valueOf(i + 1);
-            print(n + " " + getPaquetes().get(i).getNombre());
+        int flag = 0; 
+        int pa = 0;
+        while(flag == 0){
+            print("Seleccione el paquete deseado.");
+            String n;
+            for (int i = 0; getPaquetes().size() > i; i++) {
+                n = String.valueOf(i + 1);
+                print(n + " " + getPaquetes().get(i).getNombre());
+            }
+            Scanner leer = new Scanner(System.in);
+            try{
+                pa = leer.nextInt();
+            } 
+            catch(Exception e){
+                System.err.println("Lo que ingreso no es un numero");
+            }
+            if (pa == getPaquetes().size()){
+                flag = 1;
+            }
         }
-        Scanner leer = new Scanner(System.in);
-        int pa;
-        pa = leer.nextInt();
-        pa = pa - 1;
-        return getPaquetes().get(pa);
+        return getPaquetes().get(pa-1);
     }
 /**
  *  Funcion para modificar Habitacion

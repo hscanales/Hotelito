@@ -44,11 +44,20 @@ public class Menu extends Auxiliar {
      * los menu secundarios
      */
     public void start() {
-
+        int op = 0;
         boolean flag = true;
         while (flag) {
             deployMain();
-            int op = sc.nextInt();
+            while (true){
+                try{
+                    Scanner n = new Scanner(System.in);
+                    op = n.nextInt();
+                    break;
+                } 
+                catch(Exception e){
+                    System.err.println("Lo que ingreso no es un numero");
+                }
+            }
             switch (op) {
                 case 0:
                     flag = false;
@@ -70,7 +79,6 @@ public class Menu extends Auxiliar {
                     break;
             }
         }
-
     }
 
     /**
@@ -84,7 +92,6 @@ public class Menu extends Auxiliar {
         print("2- Reservaciones");
         print("3- Clientes");
         print("Ingrese su opcion: ");
-
     }
 
     /**
@@ -92,6 +99,7 @@ public class Menu extends Auxiliar {
      */
     void deployOp1() {
         boolean flag = true;
+        int op = 0;
         while (flag) {
             print("Configuracion del Hotel \n");
             print("Menu");
@@ -104,7 +112,16 @@ public class Menu extends Auxiliar {
             print("6- Agregar Paquete.");
             print("7- Mostrar paquetes actuales:");
             print("Ingrese su opcion: ");
-            int op = sc.nextInt();
+            while (true){
+                try{
+                    Scanner n = new Scanner(System.in);
+                    op = n.nextInt();
+                    break;
+                } 
+                catch(Exception e){
+                    System.err.println("Lo que ingreso no es un numero");
+                }
+            }
             switch (op) {
                 case 0:
                     flag = false;
@@ -169,8 +186,9 @@ public class Menu extends Auxiliar {
      */
     void deployOp2() {
         boolean flag = true;
+        int op = 0;
         while (flag) {
-            print("Reservaciones: ");
+            print("Reservaciones: "); 
             print("Menu");
             print("0- Regresar,");
             print("1- Hacer Reservacion.");
@@ -179,7 +197,16 @@ public class Menu extends Auxiliar {
             print("4- Mostrar Reservaciones");
             print("5- Modificar Reservacion");
             print("Ingrese su opcion: ");
-            int op = sc.nextInt();
+            while (true){
+                try{
+                    Scanner n = new Scanner(System.in);
+                    op = n.nextInt();
+                    break;
+                } 
+                catch(Exception e){
+                    System.err.println("Lo que ingreso no es un numero");
+                }
+            }
             switch (op) {
                 case 0:
                     flag = false;
@@ -207,36 +234,47 @@ public class Menu extends Auxiliar {
                     print("Habitacines Disponibles");
                     hotel.HabitacionesDisponibles();
                     break;
-
+                    
                 case 4:
                     print("Mostrar reservaciones");
                     hotel.MostrarReservacion();
                     break;
                 case 5:
-                    if (hotel.reservaciones.size() == 0) {
+                    if (hotel.reservaciones.size() == 0){
                         System.err.println("No se han hecho reservaciones");
-                    } else {
+                    }
+                    else{
                         hotel.ModificarR();
                     }
                     break;
                 default:
-                    System.err.println("Ingreso una opcion no valida, intente denuevo");
+                    System.err.println("Ingreso una opcion no valida");
                     break;
             }
         }
-    }
+    }   
 
     /**
      * Tercer Menu Secundario
      */
     void deployOp3() {
+        int op = 0;
         boolean flag = true;
         while (flag) {
             print("Reservaciones: ");
             print("Menu");
             print("1- Modificar Cliente");
             print("Ingrese su opcion: ");
-            int op = sc.nextInt();
+            while (true){
+                try{
+                    Scanner n = new Scanner(System.in);
+                    op = n.nextInt();
+                    break;
+                } 
+                catch(Exception e){
+                    System.err.println("Lo que ingreso no es un numero");
+                }
+            }
             switch (op) {
                 case 0:
                     flag = false;
