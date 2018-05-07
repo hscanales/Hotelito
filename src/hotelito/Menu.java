@@ -1,14 +1,16 @@
-
 package hotelito;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
 /**
- *Clase Menu, es el Administrador de el programa en general, Utiliza Patron Singleton
+ * Clase Menu, es el Administrador de el programa en general, Utiliza Patron
+ * Singleton
+ *
  * @author HsCanales <00136317@uca.edu.sv>,
  */
 public class Menu extends Auxiliar {
+
     private static Menu menu;
 
     Scanner sc = new Scanner(System.in);
@@ -18,25 +20,28 @@ public class Menu extends Auxiliar {
     Scanner sc2 = new Scanner(System.in);
 
     Hotel hotel = new Hotel();
-/**
- * Constructor Menu
- */
+
+    /**
+     * Constructor Menu
+     */
     private Menu() {
-    }   
-    
+    }
+
     /**
      * Instancea a Menu en la memoria
-     * @return 
+     *
+     * @return
      */
-    public static Menu getInstance(){
-        if(menu==null){
-            menu=new Menu();
-        }      
+    public static Menu getInstance() {
+        if (menu == null) {
+            menu = new Menu();
+        }
         return menu;
     }
-    
+
     /**
-     * Inicia el Programa con el Menu Principal, Printeando las opciones para los menu secundarios
+     * Inicia el Programa con el Menu Principal, Printeando las opciones para
+     * los menu secundarios
      */
     public void start() {
 
@@ -61,15 +66,16 @@ public class Menu extends Auxiliar {
                     deployOp3();
                     break;
                 default:
-                    print("No a ingresado una opcion valida intente de nuevo");
+                    System.err.println("Ingreso una opcion no valida, intente denuevo");
                     break;
             }
         }
 
     }
-/**
- * Printea el Menu principal
- */
+
+    /**
+     * Printea el Menu principal
+     */
     void deployMain() {
         print("Hotelito v0.01");
         print("Menu: ");
@@ -80,9 +86,10 @@ public class Menu extends Auxiliar {
         print("Ingrese su opcion: ");
 
     }
-/**
- * Primer Menu Secundario
- */
+
+    /**
+     * Primer Menu Secundario
+     */
     void deployOp1() {
         boolean flag = true;
         while (flag) {
@@ -103,14 +110,14 @@ public class Menu extends Auxiliar {
                     flag = false;
                     break;
                 case 1:
-                    try{
-                    print("Ingrese Letra del piso a desabilitar: ");
-                    String s = sc1.nextLine();
+                    try {
+                        print("Ingrese Letra del piso a desabilitar: ");
+                        String s = sc1.nextLine();
 
-                    hotel.DeshabilitarPiso(s);
-                    break;}
-                    catch(Exception e){
-                        System.out.println("Ha ocurrido un error al ingresar el piso, intente en Mayusculas denuevo");
+                        hotel.DeshabilitarPiso(s);
+                        break;
+                    } catch (Exception e) {
+                        System.err.println("Ha ocurrido un error al ingresar el piso, intente en Mayusculas denuevo");
                     }
                 case 2:
                     print("Ingrese Letra de la habitacion a desabilitar: ");
@@ -132,7 +139,7 @@ public class Menu extends Auxiliar {
                     int r2 = sc.nextInt();
                     hotel.HabilitarHab(s4, r2);
                     break;
-                    
+
                 case 5:
                     print("Ingrese la letra de la habitacion para poner el costo: ");
                     String l = sc1.nextLine();
@@ -141,8 +148,8 @@ public class Menu extends Auxiliar {
                     print("Ingrese el costo de la habitacion: ");
                     double c = sc.nextDouble();
                     hotel.PonerPrecio(l, l2, c);
-                     break;
-                            
+                    break;
+
                 case 6:
                     hotel.CrearPaquete();
                     break;
@@ -150,19 +157,20 @@ public class Menu extends Auxiliar {
                     hotel.MostrarPaquetes();
                     break;
                 default:
-                    print("Ingreso una opcion no valida");
+                    System.err.println("Ingreso una opcion no valida, intente denuevo");
                     break;
             }
 
         }
     }
-/**
- * Segundo Menu Secundario
- */
+
+    /**
+     * Segundo Menu Secundario
+     */
     void deployOp2() {
         boolean flag = true;
         while (flag) {
-            print("Reservaciones: "); 
+            print("Reservaciones: ");
             print("Menu");
             print("0- Regresar,");
             print("1- Hacer Reservacion.");
@@ -199,33 +207,32 @@ public class Menu extends Auxiliar {
                     print("Habitacines Disponibles");
                     hotel.HabitacionesDisponibles();
                     break;
-                    
+
                 case 4:
                     print("Mostrar reservaciones");
                     hotel.MostrarReservacion();
                     break;
                 case 5:
-                    if (hotel.reservaciones.size() == 0){
+                    if (hotel.reservaciones.size() == 0) {
                         System.err.println("No se han hecho reservaciones");
-                    }
-                    else{
+                    } else {
                         hotel.ModificarR();
                     }
                     break;
                 default:
-                    print("Ingreso una opcion no valida");
+                    System.err.println("Ingreso una opcion no valida, intente denuevo");
                     break;
             }
         }
-    }   
-    
+    }
+
     /**
      * Tercer Menu Secundario
      */
-    void deployOp3(){
+    void deployOp3() {
         boolean flag = true;
         while (flag) {
-            print("Reservaciones: "); 
+            print("Reservaciones: ");
             print("Menu");
             print("1- Modificar Cliente");
             print("Ingrese su opcion: ");
@@ -236,14 +243,14 @@ public class Menu extends Auxiliar {
                     break;
                 case 1:
                     print("Modificando al cliente");
-                    
+
                     break;
                 default:
-                    print("Ingreso una opcion no valida");
+                    System.err.println("Ingreso una opcion no valida, intente denuevo");
                     break;
             }
         }
-        
+
     }
- 
+
 }
