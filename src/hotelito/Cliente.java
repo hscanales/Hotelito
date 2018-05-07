@@ -19,15 +19,25 @@ public class Cliente extends Nombre{
   
     
     public Cliente (){}
-    
+    /**
+     * Constructor de cliente
+     * @param dui 
+     */
     public Cliente(String dui){
         this.dui = dui;
     }
-
+/**
+ * 
+ * @param tarcre 
+ */
  
     public void setTarcre(String tarcre) {
         this.tarcre = tarcre;
     }
+    /**
+     * 
+     * @param dui 
+     */
     public void setDui(String dui) {
         this.dui = dui;
     }
@@ -36,10 +46,16 @@ public class Cliente extends Nombre{
     public String getTarcre() {
         return tarcre;
     }
+    /**
+     * 
+     * @return dui 
+     */
     public String getDui() {
         return dui;
     }
-  
+  /**
+   * 
+   */
     
     public void ValidarTarCre(){
         int flag = 1;
@@ -67,7 +83,7 @@ public class Cliente extends Nombre{
      */
     
     public boolean validarDui(String dui){
-        //String dui="CENSORED";
+        
         int cont = 9;
         int auxiliar, total = 0;
         for(int i=0;i<dui.length()-1;i++){
@@ -80,7 +96,7 @@ public class Cliente extends Nombre{
            return false;
         }
      auxiliar = Integer.parseInt(String.valueOf(dui.charAt(8)));
-   // System.out.println(auxiliar);
+  
         if((10-(total%10))==auxiliar){
             return true;
         }
