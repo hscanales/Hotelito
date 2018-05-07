@@ -45,7 +45,8 @@ public class Reservacion extends Hotel{
         System.out.printf(paquete.getCosto()+ " "+ habitacion.getCosto() + " total: " +total);
     }
     /**
-     * 
+     * Funcion que obtiene los datos del cliente para poder modificar los datos de
+     * este mismo y acceder a otras funciones de este mismo
      * @return cliente 
      */
 
@@ -61,14 +62,14 @@ public class Reservacion extends Hotel{
         this.cliente = cliente;
     }
 /**
- * 
+ * Getter que retorna un valor de dias
  * @return dias 
  */
     public int getDias() {
         return dias;
     }
     /**
-     * 
+     * Setter que funciona para configurar los dias de hospedaje
      * @param dias 
      */
     public void setDias(int dias) {
@@ -110,6 +111,11 @@ public class Reservacion extends Hotel{
         return total;
     }
 
+    /**
+     * Setter que sirve para configurar los datos del total
+     * @param total 
+     */
+    
     public void setTotal(double total) {
         this.total = total;
     }

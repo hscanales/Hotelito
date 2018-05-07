@@ -28,7 +28,7 @@ public class Menu extends Auxiliar {
     }
 
     /**
-     * Instancea a Menu en la memoria
+     * Hace un instancia del objeto menu dentro de la memoria
      *
      * @return
      */
@@ -74,7 +74,7 @@ public class Menu extends Auxiliar {
     }
 
     /**
-     * Printea el Menu principal
+     * Muestra el Menu principal
      */
     void deployMain() {
         print("Hotelito v0.01");

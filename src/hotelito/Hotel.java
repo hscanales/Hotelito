@@ -115,7 +115,7 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * Desabilita una habitacion
+ * Deshabilita una habitacion
  * Recorriendo la lista de habitaciones
  * @param a = Identificador del Piso
  * @param b = Correlativo de Habitacion
@@ -176,7 +176,8 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- *  
+ * Verificar si el dui del cliente se encuentra dentro de la lista de 
+ * reservaciones
  * @param dui
  * @return 
  */
@@ -194,7 +195,7 @@ public class Hotel extends Auxiliar {
         return false;
     }
 /**
- * 
+ * Funcion que se encarga de verificar si una habitacion esta ocupada o libre
  * @param a
  * @param b
  * @return 
@@ -211,7 +212,8 @@ public class Hotel extends Auxiliar {
         return false;
     }
 /**
- * 
+ * Funcion que se encarga de verificar si una habitacion esta ocupada
+ * sino, esta funcion la reserva para el usuario
  * @param a
  * @param b 
  */
@@ -278,7 +280,8 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * Muestra los datos de la reservacion
+ * Muestra los datos de la reservacion que realizara el cliente, 
+ * tambien se encarga de informar si no existen reservaciones
  */
     void MostrarReservacion() {
         if (reservaciones.isEmpty()) {

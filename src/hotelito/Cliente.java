@@ -13,6 +13,12 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 
+/**
+ * Clase Cliente que hereda de nombre y contiene
+ * atributos: Tarjeta de credito, dui y los atributos de la clase nombre
+ * @author NitroSkate <00159817@uca.edu.sv>
+ */
+
 public class Cliente extends Nombre{
     
     private String tarcre, dui;
