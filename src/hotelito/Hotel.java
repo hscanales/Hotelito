@@ -93,13 +93,21 @@ public class Hotel extends Auxiliar {
  * habitaciones disponibles
  */
     void HabitacionesDisponibles() {
+        int cont = 0;
         print("Las Habitaciones disponibles son: ");
-        habitaciones.forEach((Habitacion habitacion) -> {
+        for (Habitacion habitacion : habitaciones){
+            if (cont%10 == 0){
+                print("");
+            }
             if ((habitacion.IsReserved() || habitacion.IsAvailable()) == false) {
                 String s = habitacion.getPiso() + "" + habitacion.getCorrelativo() + ", ";
                 System.out.print(s);
             }
-        });
+            else{
+                System.out.print("    ");
+            }
+            cont++;
+        }
     }
 /**
  * Desabilita un piso entero

@@ -230,9 +230,10 @@ public class Menu extends Auxiliar {
                     hotel.EliminarReservacion(s2);
                     break;
                 case 3:
-
                     print("Habitacines Disponibles");
                     hotel.HabitacionesDisponibles();
+                    print("");
+                    print("");
                     break;
                     
                 case 4:
