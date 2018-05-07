@@ -22,20 +22,29 @@ public class Nombre {
     /** 
      * Los get y set de PrimerNom y SegundoNom hace que se obtengan y se modifiquen
      * los nombres que ingrese el usuario
-     * @return 
+     * @return PrimerNom
      */
     public String getPrimerNom() {
         return PrimerNom;
     }
-
+/**
+ * 
+ * @param PrimerNom 
+ */
     public void setPrimerNom(String PrimerNom) {
         this.PrimerNom = PrimerNom;
     }
-
+/**
+ * 
+ * @return SegundoNom 
+ */
     public String getSegundoNom() {
         return SegundoNom;
     }
-
+/**
+ * 
+ * @param SegundoNom 
+ */
     public void setSegundoNom(String SegundoNom) {
         this.SegundoNom = SegundoNom;
     }
@@ -43,21 +52,30 @@ public class Nombre {
     /**
      * Los set y get de PrimerApe y SegundoApe, funcionan para poder obtener
      * y modificar los apellidos que el usuario ingrese
-     * @return 
+     * @return PrimerApe 
      */
     
     public String getPrimerApe() {
         return PrimerApe;
     }
-
+/**
+ * 
+ * @param PrimerApe 
+ */
     public void setPrimerApe(String PrimerApe) {
         this.PrimerApe = PrimerApe;
     }
-
+/**
+ * 
+ * @return SegundoApe 
+ */
     public String getSegundoApe() {
         return SegundoApe;
     }
-
+/**
+ * 
+ * @param SegundoApe 
+ */
     public void setSegundoApe(String SegundoApe) {
         this.SegundoApe = SegundoApe;
     }
