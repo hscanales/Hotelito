@@ -10,21 +10,24 @@ public class Paquete {
     private String descripcion,nombre,codigo;
     
     /**
-     * 
+     * Setter de la clase Paquete
+     * Atributo de Costo
      * @param Costo 
      */
     public void setCosto(int Costo) {
         this.Costo = Costo;
     }
     /**
-     * 
+     * Getter de la Clase Paquete
+     * Atributo de Costo
      * @return Costo 
      */
     public double getCosto() {
         return Costo;
     }
     /**
-     * 
+     * Getter de la clase Paquete
+     * Atributo de descripcion
      * @return descripcion
      */
 
@@ -32,7 +35,8 @@ public class Paquete {
         return descripcion;
     }
 /**
- * 
+ * Setter de la clase Paquete
+ * Atributo de Descripcion
  * @param descripcion 
  */
     public void setDescripcion(String descripcion) {
@@ -77,7 +81,10 @@ public class Paquete {
         this.codigo = codigo;
     }
     
-
+/**
+ * Constructor publico de Paquete
+ * Instancia el paquete sin llenar ningun dato
+ */
     public Paquete() {
     }
   
