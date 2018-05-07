@@ -88,7 +88,9 @@ public class Hotel extends Auxiliar {
         this.paquetes = paquetes;
     }
 /**
- * 
+ * Printea en consola
+ * una lista de todas las
+ * habitaciones disponibles
  */
     void HabitacionesDisponibles() {
         print("Las Habitaciones disponibles son: ");
@@ -100,8 +102,8 @@ public class Hotel extends Auxiliar {
         });
     }
 /**
- * 
- * @param a 
+ * Desabilita un piso entero
+ * @param a = El identificador del piso a desabiltiar
  */
     void DeshabilitarPiso(String a) {
         a = a.toUpperCase();
@@ -113,9 +115,10 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * 
- * @param a
- * @param b 
+ * Desabilita una habitacion
+ * Recorriendo la lista de habitaciones
+ * @param a = Identificador del Piso
+ * @param b = Correlativo de Habitacion
  */
     void DeshabilitarHab(String a, int b) {
         a = a.toUpperCase();
@@ -126,7 +129,9 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * 
+ * Habilita un piso previamente desabilitado
+ * recibe como parametro un String que es el identificador del Piso
+ * a habilitar
  * @param a 
  */
     void HabilitarPiso(String a) {
@@ -138,7 +143,9 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * 
+ * Funcion para Habilitar una Habitacion en especifico
+ * Recibe como parametros el identificador del piso y
+ * el correlativo de la habitacion
  * @param a
  * @param b 
  */
@@ -152,7 +159,10 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * 
+ * Setea el precio de una habitacion en especifico
+ * Recibe como parametros, el identificador del piso
+ * el correlativo de la habitacion y por ultimo
+ * recibe el precio a ser establecido en la habitacion
  * @param a
  * @param b
  * @param c 
@@ -166,7 +176,7 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * 
+ *  
  * @param dui
  * @return 
  */
@@ -209,7 +219,6 @@ public class Hotel extends Auxiliar {
         a = a.toUpperCase();
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
-                print("hola");
                 Hab.setIsReserved(true);
             }
         }
@@ -312,7 +321,11 @@ public class Hotel extends Auxiliar {
 
     }
 /**
- * 
+ * Funcion para crear paquetes,
+ * Verifica que la lista no este vacia, y en caso
+ * que si este vacia simplemente la llena, en caso contrario
+ * recorre la lista verificando que no se haya ingresado el mismo codigo para 
+ * otro paquete
  */
     void CrearPaquete() {
         boolean flag = true;
@@ -355,7 +368,7 @@ public class Hotel extends Auxiliar {
 
     }
 /**
- * 
+ * Funcion para Mostrar la lista completa de paquetes
  */
     void MostrarPaquetes() {
         if (paquetes.isEmpty()) {
@@ -368,7 +381,7 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * 
+ *  Funcion para retornar un paquete especifico
  * @return 
  */
     Paquete PaqueteS() {
@@ -385,6 +398,7 @@ public class Hotel extends Auxiliar {
         return getPaquetes().get(pa);
     }
 /**
+ *  Funcion para modificar Habitacion
  * 
  * @param pos 
  */
@@ -409,7 +423,7 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * 
+ * Funcion para modificar cantidad de dias en una reservacion
  * @param pos 
  */
     void ModDias(int pos) {
@@ -417,14 +431,14 @@ public class Hotel extends Auxiliar {
         reservaciones.get(pos).setDias(c);
     }
 /**
- * 
+ * Funcion para modificar paquete en una reservacion
  * @param pos 
  */
     void ModPaquete(int pos) {
         reservaciones.get(pos).setPaquete(PaqueteS());
     }
        /**
-     * 
+     * Funcion para modificar alguna reservacion
      */
     void ModificarR(){
         System.out.printf("Ingrese DUI: ");
