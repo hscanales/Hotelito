@@ -1,17 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hotelito;
 
 /**
- *
- * @author nitroskate
+ * Objeto Paquete de Hotel, 
+ * Utilizado para brindarle servicios al usuario
+ * @author nitroskate, Hscanales<00136317@uca.edu.sv>
  */
 public class Paquete {
     private double Costo;
     private String descripcion,nombre,codigo;
+    
     
     public void setCosto(int Costo) {
         this.Costo = Costo;

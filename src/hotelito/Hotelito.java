@@ -7,7 +7,7 @@ package hotelito;
 
 /**
  *
- * @author HsCanales <00136317@uca.edu.sv>
+ * @author HsCanales <00136317@uca.edu.sv>,
  */
 public class Hotelito {
     /**
@@ -15,8 +15,10 @@ public class Hotelito {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Menu menu = new Menu();
+        Menu menu=Menu.getInstance();
+        
         menu.start();
+   
        
     }
     

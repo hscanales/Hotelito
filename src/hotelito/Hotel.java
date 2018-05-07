@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- *
+ *  Clase Maestra de Hotel
+ *  Contiene todas las variables globales
  * @author HsCanales <00136317@uca.edu.sv>
  */
 public class Hotel extends Auxiliar {
@@ -23,7 +24,12 @@ public class Hotel extends Auxiliar {
     Scanner in = new Scanner(System.in);
     Scanner in1 = new Scanner(System.in);
     private int npisos = 6;
-
+/**
+ * Constructor Clase Hotel
+ * Llena el Hotel con 6 Pisos de 10 Habitaciones C/u
+ * Llena el hotel con dos tipos de paquetes: Premiun y Basico
+ * 
+ */
     public Hotel() {
         String[] pisos = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
         Paquete premium = new Paquete(150, "Descripcion pendiente", "Premiun", "1");
@@ -52,23 +58,37 @@ public class Hotel extends Auxiliar {
             }
         }
     }
-
+/**
+ * Setea la cantidad de Pisos en el Hotel
+ * @param npisos 
+ */
     void setNpisos(int npisos) {
         this.npisos = npisos;
     }
-
+/**
+ * Consigue la cantidad de Pisos en el Hotel
+ * @return Entero de Numeros de Pisos en el Hotel
+ */
     int getNpisos() {
         return npisos;
     }
-
+/**
+ * Consigue ArrayList de Paquetes en el hotel
+ * @return ArrayList de Paquetes
+ */
     public ArrayList<Paquete> getPaquetes() {
         return paquetes;
     }
-
+/**
+ * Setea el ArrayList de Paquetes
+ * @param paquetes 
+ */
     public void setPaquetes(ArrayList<Paquete> paquetes) {
         this.paquetes = paquetes;
     }
-
+/**
+ * 
+ */
     void HabitacionesDisponibles() {
         print("Las Habitaciones disponibles son: ");
         habitaciones.forEach((Habitacion habitacion) -> {
@@ -78,34 +98,51 @@ public class Hotel extends Auxiliar {
             }
         });
     }
-
+/**
+ * 
+ * @param a 
+ */
     void DeshabilitarPiso(String a) {
-
+        a = a.toUpperCase();
         for (Habitacion Hab : habitaciones) {
             if (a.equals(Hab.getPiso())) {
                 Hab.setIsAvailable(true);
             }
+
         }
     }
-
+/**
+ * 
+ * @param a
+ * @param b 
+ */
     void DeshabilitarHab(String a, int b) {
+        a = a.toUpperCase();
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
                 Hab.setIsAvailable(true);
             }
         }
     }
-
+/**
+ * 
+ * @param a 
+ */
     void HabilitarPiso(String a) {
-
+        a = a.toUpperCase();
         for (Habitacion Hab : habitaciones) {
             if (a.equals(Hab.getPiso())) {
                 Hab.setIsAvailable(false);
             }
         }
     }
-
+/**
+ * 
+ * @param a
+ * @param b 
+ */
     void HabilitarHab(String a, int b) {
+        a = a.toUpperCase();
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
                 Hab.setIsAvailable(false);
@@ -113,20 +150,25 @@ public class Hotel extends Auxiliar {
             }
         }
     }
-
+/**
+ * 
+ * @param a
+ * @param b
+ * @param c 
+ */
     void PonerPrecio(String a, int b, double c) {
+        a = a.toUpperCase();
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && Hab.getCorrelativo() == b) {
                 Hab.setCosto(c);
             }
         }
     }
-
-    void test() {
-        int a = input.nextInt();
-        print(a);
-    }
-
+/**
+ * 
+ * @param dui
+ * @return 
+ */
     boolean verificarCliente(String dui) {
         Cliente g = new Cliente();
         if (g.validarDui(dui)) {
@@ -140,8 +182,14 @@ public class Hotel extends Auxiliar {
         }
         return false;
     }
-
+/**
+ * 
+ * @param a
+ * @param b
+ * @return 
+ */
     boolean verificarHabitacion(String a, int b) {
+        a = a.toUpperCase();
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
                 if (!Hab.IsAvailable() && !Hab.IsReserved()) {
@@ -151,8 +199,13 @@ public class Hotel extends Auxiliar {
         }
         return false;
     }
-
+/**
+ * 
+ * @param a
+ * @param b 
+ */
     void ReservarHabitacion(String a, int b) {
+        a = a.toUpperCase();
         for (Habitacion Hab : habitaciones) {
             if ((a.equals(Hab.getPiso())) && (Hab.getCorrelativo() == b)) {
                 print("hola");
@@ -160,9 +213,17 @@ public class Hotel extends Auxiliar {
             }
         }
     }
-
+/**
+ * 
+ * @param dui
+ * @param a
+ * @param b
+ * @param p
+ * @param dia 
+ */
     void HacerReservacion(String dui, String a, int b, Paquete p, int dia) {
         //HabitacionesDisponibles();
+        a = a.toUpperCase();
         boolean flag = false;
         if (verificarCliente(dui)) {
             if (verificarHabitacion(a, b)) {
@@ -186,20 +247,24 @@ public class Hotel extends Auxiliar {
             System.out.println("No se hizo la reservacion ");
         }
     }
-
+/**
+ * 
+ */
     void MostrarReservacion() {
         if (reservaciones.isEmpty()) {
             System.out.println("No hay reservaciones hechas");
-        }
-        else{
-            for (Reservacion most: reservaciones){
+        } else {
+            for (Reservacion most : reservaciones) {
                 print(most.getCliente().getPrimerNom() + " " + most.getCliente().getSegundoNom() + " " + most.getCliente().getPrimerApe() + " " + most.getCliente().getSegundoApe());
-                
-                System.out.println(most.getDias()+" "+most.getHabitacion().getPiso()+most.getHabitacion().getCorrelativo()+" "+most.getCliente().getDui()+" "+most.getPaquete().getNombre());      
+
+                System.out.println(most.getDias() + " " + most.getHabitacion().getPiso() + most.getHabitacion().getCorrelativo() + " " + most.getCliente().getDui() + " " + most.getPaquete().getNombre());
             }
         }
     }
-
+/**
+ * 
+ * @param dui 
+ */
     void EliminarReservacion(String dui) {
         int cont = 0;
         int index = 0;
@@ -228,7 +293,9 @@ public class Hotel extends Auxiliar {
         }
 
     }
-
+/**
+ * 
+ */
     void CrearPaquete() {
         boolean flag = true;
         double costo;
@@ -269,7 +336,9 @@ public class Hotel extends Auxiliar {
         }
 
     }
-
+/**
+ * 
+ */
     void MostrarPaquetes() {
         if (paquetes.isEmpty()) {
             print("No tiene paquetes registrados en el hotel");
@@ -278,49 +347,103 @@ public class Hotel extends Auxiliar {
                 System.out.print(paquete.getNombre());
             });
             n();
-        }   
+        }
     }
-    
-    Paquete PaqueteS(){
+/**
+ * 
+ * @return 
+ */
+    Paquete PaqueteS() {
         print("Seleccione el paquete deseado.");
         String n;
-        for (int i = 0; getPaquetes().size() > i; i++){
-            n = String.valueOf(i+1);
+        for (int i = 0; getPaquetes().size() > i; i++) {
+            n = String.valueOf(i + 1);
             print(n + " " + getPaquetes().get(i).getNombre());
         }
         Scanner leer = new Scanner(System.in);
         int pa;
         pa = leer.nextInt();
-        pa = pa-1;
+        pa = pa - 1;
         return getPaquetes().get(pa);
     }
-    
-    void ModHabitacion(int pos){
+/**
+ * 
+ * @param pos 
+ */
+    void ModHabitacion(int pos) {
         int flag = 0;
         String a;
         int c;
-        while (flag == 0){
+        while (flag == 0) {
             System.out.printf("Ingrese el piso de la habitacion a cambiar: ");
             a = in1.nextLine();
+            a = a.toUpperCase();
             System.out.printf("Ingrese el correlativo de la habitacion a cambiar: ");
             c = in.nextInt();
-            if (verificarHabitacion(a, c)){
+            if (verificarHabitacion(a, c)) {
                 reservaciones.get(pos).getHabitacion().setPiso(a);
                 reservaciones.get(pos).getHabitacion().setCorrelativo(c);
                 flag = 1;
             }
-            if (flag == 0){
+            if (flag == 0) {
                 System.err.println("La habitacion que ingreso no se encuentra disponible");
             }
         }
     }
-    
-    void ModDias(int pos){
+/**
+ * 
+ * @param pos 
+ */
+    void ModDias(int pos) {
         int c = reservaciones.get(pos).ValidarDias();
         reservaciones.get(pos).setDias(c);
     }
-    
-    void ModPaquete(int pos){
+/**
+ * 
+ * @param pos 
+ */
+    void ModPaquete(int pos) {
         reservaciones.get(pos).setPaquete(PaqueteS());
+    }
+       /**
+     * 
+     */
+    void ModificarR(){
+        System.out.printf("Ingrese DUI: ");
+        int flag = 0;
+        String dui = null;
+        int cont = 0;
+        while(flag == 0){
+            cont = 0;
+            dui = input.nextLine();
+            for (Reservacion rev : reservaciones) {
+                if (dui.equals(rev.getCliente().getDui())) {
+                    flag = 1;
+                }
+                cont++;
+            }
+            if (flag == 0){
+                System.err.println("El DUI que ingresó no esta registrado");
+            }
+        }
+        print("El que se desea modificar.");
+        print("1- Habitacion.");
+        print("2- Cantidad de dias.");
+        print("3- Paquete.");
+        int op = input.nextInt();
+        switch (op) {
+            case 1:
+                ModHabitacion(cont-1);
+                break;
+            case 2:
+                ModDias(cont-1);
+                break;
+            case 3:
+                ModPaquete(cont-1);
+                break;
+            default:
+                print("Ingreso una opcion no valida");
+                break;
+        }
     }
 }
