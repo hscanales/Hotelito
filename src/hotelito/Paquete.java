@@ -43,7 +43,8 @@ public class Paquete {
         this.descripcion = descripcion;
     }
 /**
- * 
+ * Getter de la Clase paquete
+ * Atributo de Nombre
  * @return nombre 
  */
     public String getNombre() {
