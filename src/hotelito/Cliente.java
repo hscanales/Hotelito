@@ -33,7 +33,7 @@ public class Cliente extends Nombre{
         this.dui = dui;
     }
 /**
- * 
+ * Setter que permite modificar o ingresar un dato de tipo string
  * @param tarcre 
  */
  
@@ -41,26 +41,33 @@ public class Cliente extends Nombre{
         this.tarcre = tarcre;
     }
     /**
-     * 
+     * FUncion setter que permite ingresar o modificar el dui
      * @param dui 
      */
     public void setDui(String dui) {
         this.dui = dui;
     }
    
+    /**
+     * Funcion getter que retorna el valor de la tarjeta de credito
+     * @return 
+     */
  
     public String getTarcre() {
         return tarcre;
     }
     /**
-     * 
+     * Funcion getter que retorna el valor del dui ingresado o 
+     * modificado
      * @return dui 
      */
     public String getDui() {
         return dui;
     }
   /**
-   * 
+   * Funcion que se encarga de verificar que cuando se ingrese una tarjeta de credito, esta
+   * tenga la cantidad de digitos correcta, si no lo cumple muestra un mensaje que
+   * la tarjeta ingresada es invalidad y permite al usuario volverlo  intentar
    */
     
     public void ValidarTarCre(){

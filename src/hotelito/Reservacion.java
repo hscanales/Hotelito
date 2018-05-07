@@ -54,7 +54,8 @@ public class Reservacion extends Hotel{
         return cliente;
     }
     /**
-     * 
+     * Funcion que permite modificar todos los atributos del cliente o utilizar alguna
+     * funcion asociada a esta clase
      * @param cliente 
      */
 
@@ -76,35 +77,38 @@ public class Reservacion extends Hotel{
         this.dias = dias;
     }
     /**
-     * 
+     * Getter que retorna algun atributo que pertenezca a la clase
+     * habitacion
      * @return habitacion 
      */
     public Habitacion getHabitacion() {
         return habitacion;
     }
     /**
-     * 
+     * Setter que permite modificar algunos atributos que la clase
+     * habitacion contenga o utilizar alguna funcion que este contenga
      * @param habitacion 
      */
     public void setHabitacion(Habitacion habitacion) {
         this.habitacion = habitacion;
     }
     /**
-     * 
+     * Getter que retorna algun valor de los atributos de la clase paquete
      * @return paquete 
      */
     public Paquete getPaquete() {
         return paquete;
     }
     /**
-     * 
+     * Setter que permite modficar algun atributo de la clase paquete o 
+     * utilizar alguna funcion que este asociada a esta clase
      * @param paquete 
      */
     public void setPaquete(Paquete paquete) {
         this.paquete = paquete;
     }
 /**
- * 
+ * Funcion que retorna el total del costo por los servicios del hotel
  * @return total 
  */
     public double getTotal() {

@@ -295,7 +295,8 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * Elimina la reservacion asociada al parametro
+ * Elimina la reservacion asociada al parametro del dui que se ingrese y se encarga
+ * de buscar dicha reservacion por medio de ese parametro
  * @param dui 
  */
     void EliminarReservacion(String dui) {
@@ -414,7 +415,8 @@ public class Hotel extends Auxiliar {
         return getPaquetes().get(pa-1);
     }
 /**
- *  Funcion para modificar Habitacion
+ *  Funcion para modificar Habitacion, tanto el piso y el correlativo de
+ * cada habitacion
  * 
  * @param pos 
  */
@@ -454,7 +456,8 @@ public class Hotel extends Auxiliar {
         reservaciones.get(pos).setPaquete(PaqueteS());
     }
        /**
-     * Funcion para modificar alguna reservacion
+     * Funcion para modificar alguna reservacion y todos los datos que esa posicion
+     * de la lista contenga
      */
     void ModificarR(){
         System.out.printf("Ingrese DUI: ");
