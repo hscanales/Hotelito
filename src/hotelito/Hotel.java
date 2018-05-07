@@ -224,7 +224,10 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * 
+ * Hace la reservacion al cliente
+ * antes verificando que los datos
+ * ingresados sean validos para hacer la
+ * reservacion
  * @param dui
  * @param a
  * @param b
@@ -232,7 +235,7 @@ public class Hotel extends Auxiliar {
  * @param dia 
  */
     void HacerReservacion(String dui, String a, int b, Paquete p, int dia) {
-        //HabitacionesDisponibles();
+        
         a = a.toUpperCase();
         String nom;
         boolean flag = false;
@@ -275,7 +278,7 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * 
+ * Muestra los datos de la reservacion
  */
     void MostrarReservacion() {
         if (reservaciones.isEmpty()) {
@@ -289,7 +292,7 @@ public class Hotel extends Auxiliar {
         }
     }
 /**
- * 
+ * Elimina la reservacion asociada al parametro
  * @param dui 
  */
     void EliminarReservacion(String dui) {
