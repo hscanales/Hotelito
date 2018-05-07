@@ -19,6 +19,11 @@ public class Nombre {
         
     }
 
+    /** 
+     * Los get y set de PrimerNom y SegundoNom hace que se obtengan y se modifiquen
+     * los nombres que ingrese el usuario
+     * @return 
+     */
     public String getPrimerNom() {
         return PrimerNom;
     }
@@ -35,6 +40,12 @@ public class Nombre {
         this.SegundoNom = SegundoNom;
     }
 
+    /**
+     * Los set y get de PrimerApe y SegundoApe, funcionan para poder obtener
+     * y modificar los apellidos que el usuario ingrese
+     * @return 
+     */
+    
     public String getPrimerApe() {
         return PrimerApe;
     }
@@ -50,6 +61,13 @@ public class Nombre {
     public void setSegundoApe(String SegundoApe) {
         this.SegundoApe = SegundoApe;
     }
+    
+    /**
+     * ValidarPrimerNombre funciona para vertificar que el nombre que se ha
+     * ingresado no sea vacio o contenga datos numericos
+     * @param n
+     * @return 
+     */
     
     public boolean ValidarPrimerNombre(String n){
         boolean x=false;
@@ -78,6 +96,14 @@ public class Nombre {
 
     }
     
+    /**
+     * ValidarSegundoNombre es una funcion que verificar que el usuario no ingrese
+     * datos numericos, pero puede dejarlo en blanco ya que no es requisito 
+     * ingresar un segundo nombre, solo se requiere el primero
+     * @param n
+     * @return 
+     */
+    
     public boolean ValidarSegundoNombre(String n){
         boolean x=false;
         Scanner in = new Scanner(System.in);
@@ -99,6 +125,15 @@ public class Nombre {
         return true;
 
     }
+    
+    /**
+     * ValidarPrimerApellido funciona para que el usuario ingrese un apellido y 
+     * no dejar en blanco este apartado y tambien verificar que no ingrese datos
+     * numericos
+     * @param n
+     * @return 
+     */
+    
     
     public boolean ValidarPrimerApellido(String n){
         boolean y=false;
@@ -125,6 +160,14 @@ public class Nombre {
         return true;
 
     }
+    
+    /**
+     * ValidarSegundoAPellido funciona para que el usuario cuando ingrese su 
+     * apellido, no ingrese datos numericos, pero puede dejar este apartado sin
+     * tener que poner un apellido
+     * @param n
+     * @return 
+     */
     
     public boolean ValidarSegundoApellido(String n){
         boolean y=false;

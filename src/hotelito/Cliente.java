@@ -59,6 +59,13 @@ public class Cliente extends Nombre{
         }
     }
     
+    /**
+     * ValidarDui sirve para validar que el dui ingresado cumpla con todos los requerimientos
+     * que un dui deba cumplir para verificar que tiene los digitos y sea un dui legitimo
+     * @param dui
+     * @return 
+     */
+    
     public boolean validarDui(String dui){
         //String dui="CENSORED";
         int cont = 9;
