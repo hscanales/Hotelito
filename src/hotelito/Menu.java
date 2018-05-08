@@ -70,10 +70,6 @@ public class Menu extends Auxiliar {
                     print("Vamos a Realizar una reservacion");
                     deployOp2();
                     break;
-                case 3:
-                    print("Vamos a Modificar un cliente");
-                    deployOp3();
-                    break;
                 default:
                     System.err.println("Ingreso una opcion no valida, intente denuevo");
                     break;
@@ -92,7 +88,6 @@ public class Menu extends Auxiliar {
         print("0- Salir");
         print("1- Configurar Hotel");
         print("2- Reservaciones");
-        print("3- Clientes");
         print("Ingrese su opcion: ");
     }
 
@@ -300,41 +295,5 @@ public class Menu extends Auxiliar {
         }
     }   
 
-    /**
-     * Tercer Menu Secundario. ESte menu se 
-     */
-    void deployOp3() {
-        int op = 0;
-        boolean flag = true;
-        while (flag) {
-            print("Reservaciones: ");
-            print("Menu");
-            print("1- Modificar Cliente");
-            print("Ingrese su opcion: ");
-            while (true){
-                try{
-                    Scanner n = new Scanner(System.in);
-                    op = n.nextInt();
-                    break;
-                } 
-                catch(Exception e){
-                    System.err.println("Lo que ingreso no es un numero");
-                }
-            }
-            switch (op) {
-                case 0:
-                    flag = false;
-                    break;
-                case 1:
-                    print("Modificando al cliente");
-
-                    break;
-                default:
-                    System.err.println("Ingreso una opcion no valida, intente denuevo");
-                    break;
-            }
-        }
-
-    }
 
 }
