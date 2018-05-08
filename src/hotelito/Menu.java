@@ -99,6 +99,7 @@ public class Menu extends Auxiliar {
      */
     void deployOp1() {
         boolean flag = true;
+        boolean flag1 = true; 
         int op = 0;
         while (flag) {
             print("Configuracion del Hotel \n");
@@ -127,44 +128,83 @@ public class Menu extends Auxiliar {
                     flag = false;
                     break;
                 case 1:
-                    try {
-                        print("Ingrese Letra del piso a desabilitar: ");
-                        String s = sc1.nextLine();
-
-                        hotel.DeshabilitarPiso(s);
-                        break;
-                    } catch (Exception e) {
-                        System.err.println("Ha ocurrido un error al ingresar el piso, intente en Mayusculas denuevo");
+                    String s = null;
+                    int n;
+                    flag1 = true;
+                    print("Ingrese la letra del piso a deshabilitar");
+                    while(flag1){
+                        s = sc1.nextLine();
+                        try{
+                            n = Integer.parseInt(s);
+                            System.err.println("Debe ingresar una letra.");
+                        }
+                        catch(Exception e){
+                            flag1 = false;
+                        }
                     }
+                    hotel.DeshabilitarPiso(s);
+                    print("");
+                    break;
                 case 2:
-                    print("Ingrese Letra de la habitacion a desabilitar: ");
-                    String s2 = sc1.nextLine();
-                    print("Ingrese Correlativo de la habitacion a desabilitar: ");
-                    int r = sc.nextInt();
-                    hotel.DeshabilitarHab(s2, r);
+                    while (true){
+                        System.out.print("Ingrese el piso de la habitacion a deshabilitar: ");
+                        String s2 = sc1.nextLine();
+                        System.out.print("Ingrese el correlativo de la habitacion a deshabilitar: ");
+                        int r = sc.nextInt();
+                        if (hotel.verificarHabitacion(s2, r)){
+                            hotel.DeshabilitarHab(s2, r);
+                            break;
+                        }
+                        System.err.println("Ingreso una habitación no existente");
+                    }
+                    print("");
                     break;
                 case 3:
+                    String s3 = null;
+                    int n1;
+                    flag1 = true;
                     print("Ingrese Letra del piso a habilitar: ");
-                    String s3 = sc1.nextLine();
-
+                    while(flag1){
+                        s3 = sc1.nextLine();
+                        try{
+                            n1 = Integer.parseInt(s3);
+                            System.err.println("Debe ingresar una letra.");
+                        }
+                        catch(Exception e){
+                            flag1 = false;
+                        }
+                    }
                     hotel.HabilitarPiso(s3);
+                    print("");
                     break;
                 case 4:
-                    print("Ingrese Letra de la habitacion a habilitar: ");
-                    String s4 = sc1.nextLine();
-                    print("Ingrese Correlativo de la habitacion a habilitar: ");
-                    int r2 = sc.nextInt();
-                    hotel.HabilitarHab(s4, r2);
+                    while (true){
+                        System.out.print("Ingrese el piso de la habitacion a habilitar: ");
+                        String s4 = sc1.nextLine();
+                        System.out.print("Ingrese el correlativo de la habitacion a habilitar: ");
+                        int r2 = sc.nextInt();
+                        if (hotel.verificarHabitacion(s4, r2)){
+                            hotel.HabilitarHab(s4, r2);
+                            break;
+                        }
+                        System.err.println("Ingreso una habitación no existente");
+                    }
+                    print("");
                     break;
-
                 case 5:
-                    print("Ingrese la letra de la habitacion para poner el costo: ");
-                    String l = sc1.nextLine();
-                    print("Ingrese el correlativo de la habitacion para poner el costo: ");
-                    int l2 = sc.nextInt();
-                    print("Ingrese el costo de la habitacion: ");
-                    double c = sc.nextDouble();
-                    hotel.PonerPrecio(l, l2, c);
+                    while (true){
+                        System.out.print("Ingrese el piso de la habitacion: ");
+                        String s5 = sc1.nextLine();
+                        System.out.print("Ingrese el correlativo de la habitacion: ");
+                        int r3 = sc.nextInt();
+                        if (hotel.verificarHabitacion(s5, r3)){
+                            print("Ingrese el costo de la habitacion: ");
+                            double c = sc.nextDouble();
+                            hotel.PonerPrecio(s5, r3, c);
+                            break;
+                        }
+                        System.err.println("Ingreso una habitación no existente");
+                    }
                     break;
 
                 case 6:

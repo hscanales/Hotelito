@@ -114,12 +114,16 @@ public class Hotel extends Auxiliar {
  * @param a = El identificador del piso a desabiltiar
  */
     void DeshabilitarPiso(String a) {
+        boolean flag = true;
         a = a.toUpperCase();
         for (Habitacion Hab : habitaciones) {
             if (a.equals(Hab.getPiso())) {
                 Hab.setIsAvailable(true);
+                flag = false;
             }
-
+        }
+        if(flag){
+            System.err.println("El piso que ingreso o existe");
         }
     }
 /**
@@ -143,11 +147,16 @@ public class Hotel extends Auxiliar {
  * @param a 
  */
     void HabilitarPiso(String a) {
+        boolean flag = true;
         a = a.toUpperCase();
         for (Habitacion Hab : habitaciones) {
             if (a.equals(Hab.getPiso())) {
                 Hab.setIsAvailable(false);
+                flag = false;
             }
+        }
+        if (flag){
+            System.err.println("El piso que ingreso no existe");
         }
     }
 /**
