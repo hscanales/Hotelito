@@ -41,7 +41,7 @@ public class Cliente extends Nombre{
         this.tarcre = tarcre;
     }
     /**
-     * FUncion setter que permite ingresar o modificar el dui
+     * Funcion setter que permite ingresar o modificar el dui
      * @param dui 
      */
     public void setDui(String dui) {

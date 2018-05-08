@@ -10,7 +10,10 @@ package hotelito;
  * @author HsCanales <00136317@uca.edu.sv>,
  */
 public class Hotelito {
-    /**
+    /**Con esta funcion se manda a llamar una instancia del menu para poder
+     * inicializar el programa que permitira al usuario poder hacer, modificar
+     * o eliminar aspectos que se ofrecen en el hotel, para lo cual fue 
+     * diseñado el siguiente codigo
      * @param args the command line arguments
      */
     public static void main(String[] args) {

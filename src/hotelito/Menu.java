@@ -41,7 +41,7 @@ public class Menu extends Auxiliar {
 
     /**
      * Inicia el Programa con el Menu Principal, Printeando las opciones para
-     * los menu secundarios
+     * los menu secundarios.
      */
     public void start() {
         int op = 0;
@@ -82,7 +82,9 @@ public class Menu extends Auxiliar {
     }
 
     /**
-     * Muestra el Menu principal
+     * Muestra el Menu principal. El menu se encarga de desplegar dos opciones
+     * al usuario de poder configurar algunos aspectos del hotel y poder 
+     * configurar las reservaciones
      */
     void deployMain() {
         print("Hotelito v0.01");
@@ -95,7 +97,9 @@ public class Menu extends Auxiliar {
     }
 
     /**
-     * Primer Menu Secundario
+     * Primer Menu Secundario. Menu encargado modificar el estado y precio de 
+     * las habitaciones y poder agregar o eliminar paquetes ofrecidos por el 
+     * hotel
      */
     void deployOp1() {
         boolean flag = true;
@@ -222,7 +226,8 @@ public class Menu extends Auxiliar {
     }
 
     /**
-     * Segundo Menu Secundario
+     * Segundo Menu Secundario. La funcion es mostrar todas las opciones que 
+     * reservaciones tiene para mostrarle al usuario.
      */
     void deployOp2() {
         boolean flag = true;
@@ -296,7 +301,7 @@ public class Menu extends Auxiliar {
     }   
 
     /**
-     * Tercer Menu Secundario
+     * Tercer Menu Secundario. ESte menu se 
      */
     void deployOp3() {
         int op = 0;
